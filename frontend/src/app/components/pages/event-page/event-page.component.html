@@ -1,0 +1,61 @@
+<div class="container">
+    <img [src]="event.imageUrl" [alt]="event.name"/>
+    
+    <div class="details">
+        <div class="header">
+            <span class="name">{{event.name}}</span>
+            <span class="favorite {{event.favorite? '': 'not'}}">♥</span>
+        </div>
+
+        <div class="tag">
+            <a routerLink="/tag/{{event.category}}">{{event.category}}</a>
+        </div>
+
+        <div class="organizer">
+            <span>Organizer: <strong>{{event.organizer}}</strong></span>
+        </div>
+
+        <div class="date">
+            <span>Date: <strong>{{event.date}}</strong></span>
+        </div>
+
+        <div class="ticket">
+            <div class="stub">
+              <div class="top">
+                <span class="admit">Admit</span>
+                <span class="line"></span>
+                <span class="num">
+                  Invitation
+                  <span>31415926</span>
+                </span>
+              </div>
+              <div class="number">1</div>
+              <div class="invite">
+                Invite for you
+              </div>
+            </div>
+            <div class="check">
+              <div class="big">
+                You're <br> Invited
+              </div>
+              <div class="number">#1</div>
+              <div class="info">
+                <section>
+                  <div class="title">Date</div>
+                  <div>4/27/2016</div>
+                </section>
+                <section>
+                  <div class="title">Issued By</div>
+                  <div>Ampersand</div>
+                </section>
+                <section>
+                  <div class="title">Invite Number</div>
+                  <div>31415926</div>
+                </section>
+              </div>
+            </div>
+        </div>
+
+        <button (click)="buyTicket()">Buy Ticket</button>
+    </div>
+</div>

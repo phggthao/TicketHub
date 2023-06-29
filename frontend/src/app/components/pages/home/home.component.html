@@ -1,0 +1,28 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<ul>
+    <li *ngFor="let event of events">
+        <a routerLink="/event/{{event.id}}">
+            <img [src]="event.imageUrl" [alt]="event.name"/>
+            <div class="content">
+                <div class="name">
+                    {{event.name}}
+                </div>
+                <span class="favorite {{event.favorite?'':'not'}}">
+                    ♥
+                </span>
+                <div class="event-item-footer">
+                    <div class="location">
+                        <span>📍</span>
+                        {{event.location}}
+                    </div>
+
+                    <div class="date">
+                        <span>⏳</span>
+                        {{event.date}}
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
