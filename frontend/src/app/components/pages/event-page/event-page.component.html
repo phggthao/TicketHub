@@ -1,4 +1,9 @@
-<div class="container">
+<app-not-found 
+    [visible]="!event.id"
+    notFoundMessage="Page Not Found"
+    resetLinkText="Back To Homepage">
+</app-not-found>
+<div *ngIf="event.id" class="container">
     <img [src]="event.imageUrl" [alt]="event.name"/>
     
     <div class="details">

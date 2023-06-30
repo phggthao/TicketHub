@@ -10,6 +10,7 @@ import { TagsComponent } from './components/partials/tags/tags.component';
 import { EventPageComponent } from './components/pages/event-page/event-page.component';
 import { SelectTicketPageComponent } from './components/pages/select-ticket-page/select-ticket-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TitleComponent } from './components/partials/title/title.component';
     TagsComponent,
     EventPageComponent,
     SelectTicketPageComponent,
-    TitleComponent
+    TitleComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

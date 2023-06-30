@@ -1,32 +1,38 @@
 <app-title title="Select Tickets" margin="1.5rem 0 0 2.5rem"></app-title>
-
-<div class="container">
-    <ul>
-        <li *ngFor="let cartItem of cart.items">
-            <div>
-                <a>{{cartItem.ticket.class}}</a>
-            </div>
-
-            <div>
-                <span>Price: </span>{{cartItem.ticket.price|currency}}
-            </div>
-
-            <div>
-                {{cartItem.ticket.description}}
-            </div>
-            <span>
-                <button class="minus" (click)="decrementQuantity(cartItem)">-</button>
-                <span>{{cartItem.quantity}}</span>
-                <button class="plus" (click)="incrementQuantity(cartItem)">+</button>
-            </span>
-        </li>
-    </ul>
+<app-not-found 
+    [visible]="!cart || !cart.items.length"
+    notFoundMessage="Page Not Found"
+    resetLinkText="Go To Homepage">
+</app-not-found>
+<div *ngIf="cart && cart.items.length">
+    <div class="container">
+        <ul>
+            <li *ngFor="let cartItem of cart.items">
+                <div>
+                    <a>{{cartItem.ticket.class}}</a>
+                </div>
     
-    <div class="booking-info">
-        <div>
-            <div class="total-price">{{cart.totalPrice|currency}}</div>
+                <div>
+                    <span>Price: </span>{{cartItem.ticket.price|currency}}
+                </div>
+    
+                <div>
+                    {{cartItem.ticket.description}}
+                </div>
+                <span>
+                    <button class="minus" (click)="decrementQuantity(cartItem)">-</button>
+                    <span>{{cartItem.quantity}}</span>
+                    <button class="plus" (click)="incrementQuantity(cartItem)">+</button>
+                </span>
+            </li>
+        </ul>
+        
+        <div class="booking-info">
+            <div>
+                <div class="total-price">{{cart.totalPrice|currency}}</div>
+            </div>
         </div>
     </div>
-</div>
-
-<button class="continue">Continue</button>
+    
+    <button class="continue">Continue</button>
+</div> 
