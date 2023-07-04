@@ -14,7 +14,9 @@ export class EventPageComponent implements OnInit {
   constructor(activatedRoute:ActivatedRoute, eventService:EventService, private cartService: CartService, private router:Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)
-        this.event = eventService.getEventById(params.id);
+        eventService.getEventById(params.id).subscribe(serverEvent => {
+          this.event = serverEvent;
+        });
     })
   }
 
@@ -22,7 +24,6 @@ export class EventPageComponent implements OnInit {
   }
 
   buyTicket(){
-    //this.cartService.clearCart();
     this.cartService.getAllTickets(this.event);
     this.router.navigateByUrl('/event/'+ this.event.id +'/select-ticket');
   }

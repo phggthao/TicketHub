@@ -1,33 +1,35 @@
 import { Injectable } from '@angular/core';
-import { sample_events, sample_tags } from 'src/data';
 import { Event } from '../shared/models/Event';
 import { Tag } from '../shared/models/Tag';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { EVENTS_BY_CATEGORY_URL, EVENTS_BY_SEARCH_URL, EVENTS_CATEGORIES_URL, EVENTS_URL, EVENT_BY_ID_URL } from '../shared/constants/urls';
  
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getAll():Event[]{
-    return sample_events;
+  getAll(): Observable<Event[]>{
+    return this.http.get<Event[]>(EVENTS_URL);
   }
 
-  getAllEventsBySearchTerm(searchTerm:string){
-    return this.getAll().filter(event => event.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  getAllEventsBySearchTerm(searchTerm:string): Observable<Event[]>{
+    return this.http.get<Event[]>(EVENTS_BY_SEARCH_URL + searchTerm);
   }
 
-  getAllTags():Tag[]{
-    return sample_tags;
+  getAllTags(): Observable<Tag[]>{
+    return this.http.get<Tag[]>(EVENTS_CATEGORIES_URL);
   }
 
-  getAllEventsByTag(tag:string):Event[]{
-    return tag === "All"?
-    this.getAll():
-    this.getAll().filter(event => event.category?.includes(tag));
+  getAllEventsByTag(tag:string): Observable<Event[]>{
+    return tag === "All" ?
+      this.getAll() :
+      this.http.get<Event[]>(EVENTS_BY_CATEGORY_URL + tag);
   }
 
-  getEventById(eventId:string):Event{
-    return this.getAll().find(event => event.id == eventId) ?? new Event();
+  getEventById(eventId:string): Observable<Event>{
+    return this.http.get<Event>(EVENT_BY_ID_URL + eventId);
   }
 }
