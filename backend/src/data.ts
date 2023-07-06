@@ -159,3 +159,30 @@ export const sample_tags:any[] = [
     { name: 'Workshop', count: 1 },
     { name: 'Conference', count: 1 },
 ]
+
+export const sample_users: any[] = [
+    {
+        id: "1",
+        name: "Nguyen Phuong Thao",
+        email: "phgg.thao.28@gmail.com",
+        phone: "0123456789",
+        password: "123",
+        isOrganizer: true,
+    },
+    {
+        id: "2",
+        name: "Test 1",
+        email: "test1@gmail.com",
+        phone: "0123456788",
+        password: "123",
+        isOrganizer: false,
+    },
+    {
+        id: "3",
+        name: "Test 2",
+        email: "test2@gmail.com",
+        phone: "0123456787",
+        password: "123",
+        isOrganizer: false,
+    },
+]
