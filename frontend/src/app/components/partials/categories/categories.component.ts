@@ -13,8 +13,10 @@ export class CategoriesComponent implements OnInit {
     eventService.getAllCategories().subscribe(serverCategories => {
       this.categories = serverCategories;
     });
+    console.log("CatComp works");
   }
 
   ngOnInit(): void {
+    console.log("CatComp did work");
   }
 }

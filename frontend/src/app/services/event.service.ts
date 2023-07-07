@@ -24,9 +24,7 @@ export class EventService {
   }
 
   getAllEventsByCategory(category:string): Observable<Event[]>{
-    return category === "All" ?
-      this.getAll() :
-      this.http.get<Event[]>(EVENTS_BY_CATEGORY_URL + category);
+    return this.http.get<Event[]>(EVENTS_BY_CATEGORY_URL + category);
   }
 
   getEventById(eventId:string): Observable<Event>{

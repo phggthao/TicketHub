@@ -97,7 +97,7 @@ export const sample_events:any[] = [
         organizer: 'Pacheco, Collins and Kline',
         location: 'Ho Chi Minh City',
         date: '2023-07-01',
-        category: 'Conference',
+        categories: ['Conference'],
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/lyly.jpg',
         favorite: false,
@@ -109,7 +109,7 @@ export const sample_events:any[] = [
         organizer: 'Thompson-Jones',
         location: 'Hanoi',
         date: '2023-07-05',
-        category: 'Workshop',
+        categories: ['Workshop'],
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/organizer.jpg',
         favorite: true,
@@ -121,7 +121,7 @@ export const sample_events:any[] = [
         organizer: 'The BROS Entertainment',
         location: 'Hanoi',
         date: '2023-09-30',
-        category: 'Live Concert',
+        categories: ['Live Concert'],
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/lyly.jpg',
         favorite: true,
@@ -133,7 +133,7 @@ export const sample_events:any[] = [
         organizer: 'VinWonders',
         location: 'Nha Trang',
         date: '2023-07-22',
-        category: 'Live Concert',
+        categories: ['Live Concert'],
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/organizer.jpg',
         favorite: false,
@@ -145,7 +145,7 @@ export const sample_events:any[] = [
         organizer: 'NTPMM Entertainment',
         location: 'Ho Chi Minh City',
         date: '2023-09-09',
-        category: 'Live Concert',
+        categories: ['Live Concert'],
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/stage.jpg',
         favorite: true,
@@ -154,10 +154,9 @@ export const sample_events:any[] = [
 ]
 
 export const sample_categories:any[] = [
-    { id: '1', name: 'All'},
-    { id: '2', name: 'Live Concert'},
-    { id: '3', name: 'Workshop'},
-    { id: '4', name: 'Conference'},
+    { id: '1', name: 'Live Concert'},
+    { id: '2', name: 'Workshop'},
+    { id: '3', name: 'Conference'},
 ]
 
 export const sample_users: any[] = [

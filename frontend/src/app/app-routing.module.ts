@@ -8,7 +8,7 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 const routes: Routes = [
   { path:'', component:HomeComponent },
   { path:'search/:searchTerm', component:HomeComponent },
-  { path:'tag/:tag', component:HomeComponent },
+  { path:'category/:category', component:HomeComponent },
   { path:'event/:id', component:EventPageComponent },
   { path:'event/:id/select-ticket', component:SelectTicketPageComponent },
   { path:'login', component:LoginPageComponent }

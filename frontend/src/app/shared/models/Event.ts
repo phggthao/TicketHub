@@ -6,7 +6,7 @@ export class Event{
     organizer!: string;
     location!: string;
     date!: string;
-    category!: string;
+    categories!: string[];
     description!: string;
     imageUrl!: string;
     favorite!: boolean;

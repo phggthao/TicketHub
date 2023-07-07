@@ -1,4 +1,4 @@
-<div *ngIf="categories">
+<div>
     <a *ngFor="let category of categories" routerLink="/category/{{category.name}}">
         {{category.name}}
     </a>

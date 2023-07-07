@@ -12,8 +12,10 @@
             <span class="favorite {{event.favorite? '': 'not'}}">♥</span>
         </div>
 
-        <div class="category">
-            <a routerLink="/category/{{event.category}}">{{event.category}}</a>
+        <div class="categories">
+          <a *ngFor="let category of event.categories" routerLink="/category/{{category}}">
+            {{category}}
+          </a>
         </div>
 
         <div class="organizer">

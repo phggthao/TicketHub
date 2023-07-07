@@ -26,7 +26,7 @@ app.get("/api/events/category", (req, res) => {
 
 app.get("/api/events/category/:categoryName", (req, res) => {
     const categoryName = req.params.categoryName;
-    const events = sample_events.find(event => event.category?.includes(categoryName));
+    const events = sample_events.find(event => event.categories?.includes(categoryName));
     res.send(events);
 })
 
