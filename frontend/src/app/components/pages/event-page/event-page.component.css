@@ -49,13 +49,12 @@ img{
     color: grey;
 }
 
-.tags{
+.category{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
-.tag a{
+.category a{
     background-color: #f0f0f0;
     padding: 0.3rem 1rem;
     margin: 0.2rem 0.15rem;

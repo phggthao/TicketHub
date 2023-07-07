@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { sample_events, sample_tags, sample_users } from "./data";
+import { sample_events, sample_categories, sample_users } from "./data";
 import jwt from "jsonwebtoken";
 
 const app = express();
@@ -21,7 +21,7 @@ app.get("/api/events/search/:searchTerm", (req, res) => {
 })
 
 app.get("/api/events/category", (req, res) => {
-    res.send(sample_tags);
+    res.send(sample_categories);
 })
 
 app.get("/api/events/category/:categoryName", (req, res) => {
