@@ -90,7 +90,7 @@ export const sample_tickets_5:any[] = [
     }
 ]
 
-export const sample_events: any[] = [
+export const sample_events:any[] = [
     {
         id: '1',
         name: 'Digitized uniform firmware',
@@ -153,11 +153,11 @@ export const sample_events: any[] = [
     },
 ]
 
-export const sample_tags:any[] = [
-    { name: 'All', count: 5 },
-    { name: 'Live Concert', count: 3 },
-    { name: 'Workshop', count: 1 },
-    { name: 'Conference', count: 1 },
+export const sample_categories:any[] = [
+    { id: '1', name: 'All'},
+    { id: '2', name: 'Live Concert'},
+    { id: '3', name: 'Workshop'},
+    { id: '4', name: 'Conference'},
 ]
 
 export const sample_users: any[] = [

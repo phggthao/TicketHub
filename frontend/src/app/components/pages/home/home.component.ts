@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)
         eventsObservable = this.eventService.getAllEventsBySearchTerm(params.searchTerm);
-      else if(params.tag)
-        eventsObservable = this.eventService.getAllEventsByTag(params.tag);
+      else if(params.category)
+        eventsObservable = this.eventService.getAllEventsByCategory(params.category);
       else
         eventsObservable = eventService.getAll();
  

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TagsComponent } from './tags.component';
+import { TagsComponent } from './categories.component';
 
 describe('TagsComponent', () => {
   let component: TagsComponent;

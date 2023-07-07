@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { SearchComponent } from './components/partials/search/search.component';
-import { TagsComponent } from './components/partials/tags/tags.component';
+import { CategoriesComponent } from './components/partials/categories/categories.component';
 import { EventPageComponent } from './components/pages/event-page/event-page.component';
 import { SelectTicketPageComponent } from './components/pages/select-ticket-page/select-ticket-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
@@ -26,7 +26,7 @@ import { DefaultButtonComponent } from './components/partials/default-button/def
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    TagsComponent,
+    CategoriesComponent,
     EventPageComponent,
     SelectTicketPageComponent,
     TitleComponent,
