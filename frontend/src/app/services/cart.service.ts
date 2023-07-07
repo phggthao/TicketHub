@@ -8,18 +8,15 @@ import { CartItem } from '../shared/models/CartItem';
   providedIn: 'root'
 })
 export class CartService {
-  private cart:Cart = new Cart();
+  private cart:Cart = this.getCartFromLocalStorage();
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
-  constructor() { }
 
   getAllTickets(event: Event):void {
+    this.clearCart();
     for (var ticket of event.ticket) {
       this.cart.items.push(new CartItem(ticket));
     }
-  }
-
-  getCartPrice():void {
-    this.cart.totalPrice = this.cart.items.reduce((prevSum, currentItem) => prevSum + currentItem.price, 0);
+    this.setCartToLocalStorage();
   }
 
   incrementQuantity(ticketID: string) {
@@ -28,7 +25,7 @@ export class CartService {
 
     cartItem.quantity++;
     cartItem.price += cartItem.ticket.price;
-    this.getCartPrice();
+    this.setCartToLocalStorage();
   }
 
   decrementQuantity(ticketID: string) {
@@ -40,15 +37,26 @@ export class CartService {
       cartItem.price -= cartItem.ticket.price;
     }
 
-    this.getCartPrice();
+    this.setCartToLocalStorage();
   }
 
   clearCart(){
     this.cart = new Cart();
+    this.setCartToLocalStorage();
   }
 
   getCartObservable():Observable<Cart> {
     return this.cartSubject.asObservable();
   }
+
+  private setCartToLocalStorage():void {
+    this.cart.totalPrice = this.cart.items.reduce((prevSum, currentItem) => prevSum + currentItem.price, 0);
+    localStorage.setItem('Cart', JSON.stringify(this.cart));
+    this.cartSubject.next(this.cart);
+  }
+
+  private getCartFromLocalStorage():Cart{
+    const cartJson = localStorage.getItem('Cart');
+    return cartJson? JSON.parse(cartJson) : new Cart(); 
+  }
 }
- 
