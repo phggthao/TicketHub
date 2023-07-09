@@ -3,6 +3,7 @@ export class User {
     name!:string;
     email!:string;
     phone!:string;
+    dob!:string;
     isOrganizer!:boolean;
     token!:string;
 }

@@ -166,6 +166,7 @@ export const sample_users: any[] = [
         email: "phgg.thao.28@gmail.com",
         password: "123",
         phone: "0123456789",
+        dob: "2001-09-28",
         isOrganizer: true,
     },
     {
@@ -174,6 +175,7 @@ export const sample_users: any[] = [
         email: "test1@gmail.com",
         password: "123",
         phone: "0123456788",
+        dob: "2001-08-27",
         isOrganizer: false,
     },
     {
@@ -182,6 +184,7 @@ export const sample_users: any[] = [
         email: "test2@gmail.com",
         password: "123",
         phone: "0123456787",
+        dob: "2001-08-24",
         isOrganizer: false,
     },
 ]
