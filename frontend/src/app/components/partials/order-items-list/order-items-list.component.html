@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <th>Ticket Type</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Amount</th>
+    </tr>
+    <tr *ngFor="let item of order.items">
+        <td>{{item.ticket.class}}</td>
+        <td>{{item.ticket.price | currency}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price | currency}}</td>
+    </tr>
+    <tr>
+        <td><strong>Total:</strong></td>
+        <td colspan="2"></td>
+        <td><strong>{{order.totalPrice | currency}}</strong></td>
+    </tr>
+</table>

@@ -59,15 +59,22 @@ router.post('/register', asyncHandler(
     }
 ))
 
-const generateTokenResponse = (user:any) => {
+const generateTokenResponse = (user: User) => {
     const token = jwt.sign({
-        email:user.email, isOrganizer:user.isOrganizer
-    }, "SomeRandomText", {
+        id: user.id, email:user.email, isOrganizer:user.isOrganizer
+    }, "SomeRandomText"/*process.env.JWT_SECRET!*/, {
         expiresIn:"30d"
     });
-    
-    user.token = token; 
-    return user;
+     
+    return {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        dob: user.dob,
+        isOrganizer: user.isOrganizer,
+        token: token
+    };
 }
 
 export default router;

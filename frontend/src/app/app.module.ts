@@ -22,6 +22,9 @@ import { DefaultButtonComponent } from './components/partials/default-button/def
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { LoadingComponent } from './components/partials/loading/loading.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
+import { OrderItemsListComponent } from './components/partials/order-items-list/order-items-list.component';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     TextInputComponent,
     DefaultButtonComponent,
     RegisterPageComponent,
-    LoadingComponent
+    LoadingComponent,
+    CheckoutPageComponent,
+    OrderItemsListComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +60,7 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     })
   ],
   providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true},
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi:true}
   ],
   bootstrap: [AppComponent]

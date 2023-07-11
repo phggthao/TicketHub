@@ -1,12 +1,5 @@
 import { Schema, model } from "mongoose";
-
-export interface Ticket{
-    id: string;
-    class: string;
-    quantity: number;
-    price: number;
-    description: string;
-}
+import { Ticket, TicketSchema } from "./ticket.model";
 
 export interface Event{
     id: string;
@@ -27,16 +20,11 @@ export const EventSchema = new Schema<Event>(
         organizer: {type:String, required:true},
         location: {type:String, required:true},
         date: {type:String, required:true},
-        categories: {type:[String], required:true},
+        categories: {type:[String]},
         description: {type:String, required:true},
         imageUrl: {type:String, required:true},
         favorite: {type:Boolean, default:false},
-        ticket: {type:[{
-            class: {type:String, required:true},
-            quantity: {type:Number, required:true},
-            price: {type:Number, required:true},
-            description: {type:String, required:true},
-        }], required:true},
+        ticket: {type:[TicketSchema], required:true},
     },{
         toJSON:{
             virtuals: true

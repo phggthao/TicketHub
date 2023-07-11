@@ -6,7 +6,7 @@ export interface User{
     email:string;
     password:string;
     phone:string;
-    dob:string;
+    dob:Date;
     isOrganizer:boolean;
 }
 
@@ -15,7 +15,7 @@ export const UserSchema = new Schema<User>({
     email: {type:String, required:true, unique:true},
     password: {type:String, required:true},
     phone: {type:String, required:true},
-    dob: {type:String, required:true},
+    dob: {type:Date, required:true},
     isOrganizer: {type:Boolean, required:true},
 }, {
     timestamps: true,
