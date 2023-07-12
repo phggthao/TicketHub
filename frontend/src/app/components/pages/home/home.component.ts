@@ -19,15 +19,14 @@ export class HomeComponent implements OnInit {
       else if(params.category)
         eventsObservable = this.eventService.getAllEventsByCategory(params.category);
       else
-        eventsObservable = eventService.getAll();
+        eventsObservable = eventService.getAll(); 
  
       eventsObservable.subscribe((serverEvents) => {
-        this.events = serverEvents;
+        this.events = serverEvents;        
       })
     })
   }
 
   ngOnInit(): void {
-
   }
 }

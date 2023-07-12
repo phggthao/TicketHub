@@ -8,7 +8,7 @@ import { Category } from 'src/app/shared/models/Category';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  categories?:Category[];
+  categories:Category[] = [];
   constructor(eventService:EventService) {
     eventService.getAllCategories().subscribe(serverCategories => {
       this.categories = serverCategories;

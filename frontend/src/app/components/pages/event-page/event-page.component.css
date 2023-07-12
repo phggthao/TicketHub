@@ -94,7 +94,37 @@ button:hover{
     cursor: pointer;
 }
 
+ul{
+  display: flex;
+  flex-direction: column;
+  flex: 3 0;
+  justify-content: space-evenly;
+  border: 1px solid #ffbbbb;
+  border-radius: 1rem;
+  list-style: none;
+  margin: 0.5rem;
+  padding: 0;
+}
 
+ul li{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+ul li:last-child{
+  border: none;
+}
+
+li div{
+  padding: 1rem;
+}
+
+li div:not(:first-child){
+  flex-basis: 18%;
+}
 
 
 
@@ -106,6 +136,7 @@ button:hover{
 
 /*************/
 /*ticket part*/
+/*
 .ticket {
     display: flex;
     justify-content: center;
@@ -247,3 +278,4 @@ button:hover{
       }
     }
   }
+  */

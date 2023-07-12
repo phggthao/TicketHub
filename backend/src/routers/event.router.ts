@@ -33,7 +33,7 @@ router.get("/search/:searchTerm", asyncHandler(
     }
 ))
 
-router.get("/category", asyncHandler(
+router.get("/categories", asyncHandler(
     async (req, res) => {
         const categories = await EventModel.aggregate([
             {

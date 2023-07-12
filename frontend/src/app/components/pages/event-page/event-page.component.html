@@ -26,6 +26,26 @@
             <span>Date: <strong>{{event.date}}</strong></span>
         </div>
 
+        <div class="description">
+          <span><strong>Description: </strong>{{event.description}}</span>
+        </div>
+
+        <ul>
+          <li *ngFor="let ticket of event.ticket">
+              <div>
+                  <a>{{ticket.class}}</a>
+              </div>
+  
+              <div>
+                  <span>Price: </span>{{ticket.price|currency}}
+              </div>
+  
+              <div>
+                  {{ticket.description}}
+              </div>
+          </li>
+      </ul>
+<!--
         <div class="ticket">
             <div class="stub">
               <div class="top">
@@ -62,7 +82,7 @@
               </div>
             </div>
         </div>
-
+-->
         <button (click)="buyTicket()">Buy Ticket</button>
     </div>
 </div>

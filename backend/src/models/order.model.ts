@@ -34,7 +34,7 @@ const OrderSchema = new Schema<Order>({
     name: {type: String, required: true},
     email: {type: String, required: true},
     phone: {type: String, required: true},
-    paymentId: {type: String, required: true},
+    paymentId: {type: String},
     totalPrice: {type: Number, required: true},
     items: {type: [OrderItemSchema], required: true},
     status: {type: String, default: OrderStatus.NEW},

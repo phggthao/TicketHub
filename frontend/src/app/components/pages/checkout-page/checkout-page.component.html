@@ -14,6 +14,14 @@
             <h3>Order Summary</h3>
             <order-items-list [order]="order"></order-items-list>
         </div>
+
+        <div>
+            <h3>Select Payment Method</h3>
+            <input type="radio" name="payment_method" value="PayPal">
+            <paypal-button [order]="order" for="paypal">PayPal</paypal-button><br>
+            <input type="radio" name="payment_method" value="MoMo">
+            <label for="momo">MoMo</label><br>
+        </div>
     </div>
 
     <div class="buttons-container">
