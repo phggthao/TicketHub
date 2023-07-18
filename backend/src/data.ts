@@ -3,14 +3,14 @@ export const sample_tickets_1:any[] = [
         id: '1',
         class: 'VIP Ticket',
         quantity: 50,
-        price: 100,
+        price: 1000000,
         description: 'Lorem Ipsum is simply dummy text',
     },
     { 
         id: '2',
         class: 'Normal Ticket',
         quantity: 50,
-        price: 500,
+        price: 500000,
         description: 'Lorem Ipsum is simply dummy text',
     }
 ]
@@ -20,14 +20,14 @@ export const sample_tickets_2:any[] = [
         id: '1',
         class: 'VIP Ticket',
         quantity: 50,
-        price: 100,
+        price: 1000000,
         description: 'Lorem Ipsum is simply dummy text',
     },
     { 
         id: '2',
         class: 'Normal Ticket',
         quantity: 50,
-        price: 500,
+        price: 500000,
         description: 'Lorem Ipsum is simply dummy text',
     }
 ]
@@ -37,20 +37,20 @@ export const sample_tickets_3:any[] = [
         id: '1',
         class: 'VIP Ticket',
         quantity: 500,
-        price: 199,
+        price: 1999000,
         description: 'Lorem Ipsum is simply dummy text',
     },
     { 
         id: '2',
         class: 'General Access Ticket',
-        quantity: 4000,
+        quantity: 400000,
         price: 169,
         description: 'Lorem Ipsum is simply dummy text',
     },
     { 
         id: '3',
         class: 'Early Bird Ticket',
-        quantity: 100,
+        quantity: 299000,
         price: 139,
         description: 'Lorem Ipsum is simply dummy text',
     }
@@ -61,21 +61,21 @@ export const sample_tickets_4:any[] = [
         id: '1',
         class: 'VIP Ticket',
         quantity: 500,
-        price: 199,
+        price: 1999000,
         description: 'Lorem Ipsum is simply dummy text',
     },
     { 
         id: '2',
         class: 'General Access',
         quantity: 4000,
-        price: 169,
+        price: 890000,
         description: 'Lorem Ipsum is simply dummy text',
     },
     { 
         id: '3',
         class: 'Early Bird Ticket',
         quantity: 100,
-        price: 139,
+        price: 690000,
         description: 'Lorem Ipsum is simply dummy text',
     }
 ]
@@ -85,7 +85,7 @@ export const sample_tickets_5:any[] = [
         id: '1',
         class: 'Standing Ticket',
         quantity: 5000,
-        price: 169,
+        price: 599000,
         description: 'Lorem Ipsum is simply dummy text',
     }
 ]

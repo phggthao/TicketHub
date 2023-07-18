@@ -10,15 +10,7 @@ import { Order } from 'src/app/shared/models/Order';
 })
 export class FinishBookingPageComponent implements OnInit {
   order: Order = new Order();
-  constructor(orderService: OrderService, router: Router) {
-    orderService.getNewOrderForCurrentUser().subscribe({
-      next: (order) => {
-        this.order = order;
-      },
-      error:() => {
-        router.navigateByUrl('/checkout');
-      }
-    })
+  constructor() {
   }
 
   ngOnInit(): void {

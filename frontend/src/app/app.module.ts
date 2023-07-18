@@ -25,8 +25,8 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 import { OrderItemsListComponent } from './components/partials/order-items-list/order-items-list.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { FinishBookingPageComponent } from './components/pages/finish-booking-page/finish-booking-page.component';
+import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +48,8 @@ import { FinishBookingPageComponent } from './components/pages/finish-booking-pa
     LoadingComponent,
     CheckoutPageComponent,
     OrderItemsListComponent,
-    PaypalButtonComponent,
-    FinishBookingPageComponent
+    FinishBookingPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,

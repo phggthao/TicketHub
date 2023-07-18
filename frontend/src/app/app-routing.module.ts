@@ -8,6 +8,7 @@ import { RegisterPageComponent } from './components/pages/register-page/register
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { FinishBookingPageComponent } from './components/pages/finish-booking-page/finish-booking-page.component';
+import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path:'event/:id/checkout', component:CheckoutPageComponent, canActivate:[AuthGuard] },
   { path:'event/:id/finish-booking', component:FinishBookingPageComponent, canActivate:[AuthGuard] },
   { path:'login', component:LoginPageComponent },
-  { path:'register', component:RegisterPageComponent }
+  { path:'register', component:RegisterPageComponent },
+  { path:'profile/:id', component:ProfilePageComponent }
 ];
 
 @NgModule({

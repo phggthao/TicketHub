@@ -1,0 +1,28 @@
+<app-not-found 
+    [visible]="!user"
+    notFoundMessage="Page Not Found"
+    resetLinkText="Back To Homepage">
+</app-not-found>
+<div *ngIf="user" class="container">
+    <app-title title="My Profile" fontSize="1.6rem"></app-title>
+    <!--<img [src]="user.imageUrl" [alt]="user.name"/>-->
+    
+    <div class="details">
+        <div class="name">
+            <span>Full Name: {{user.name}}</span>
+        </div>
+
+        <div class="email">
+            <span>Email: {{user.email}}</span>
+        </div>
+
+        <div class="dob">
+            <span>Date of Birth: {{user.dob}}</span>
+        </div>
+
+        <div class="phone">
+            <span>Phone Number: {{user.phone}}</span>
+        </div>
+        <button>Edit Your Profile</button>
+    </div>
+</div>
