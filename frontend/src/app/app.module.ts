@@ -27,6 +27,12 @@ import { OrderItemsListComponent } from './components/partials/order-items-list/
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { FinishBookingPageComponent } from './components/pages/finish-booking-page/finish-booking-page.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
+import { LottieModule } from "ngx-lottie";
+import player from "lottie-web";
+
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -61,7 +67,8 @@ import { ProfilePageComponent } from './components/pages/profile-page/profile-pa
       timeOut:3000,
       positionClass:'toast-bottom-right',
       newestOnTop:false
-    })
+    }),
+    LottieModule.forRoot({player: playerFactory})
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true},
