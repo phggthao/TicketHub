@@ -1,4 +1,11 @@
-<app-search></app-search>
+<div class="search">
+    <div class="circle"></div>
+    <h1>Seek for amazing events here!</h1>
+    <app-search></app-search>
+    <h5>or search by</h5>
+    <!--add filter here-->
+</div>
+
 <app-categories></app-categories>
 <app-not-found
     [visible]="!events || !events.length"

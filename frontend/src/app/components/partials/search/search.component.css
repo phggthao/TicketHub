@@ -1,33 +1,35 @@
 div{
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
+    margin: 0;
+    height: 2.5rem;
+    width: 25rem;
+    border-radius: 10rem;
+    border: 1px solid grey;
+    background: white;
 }
 
 input{
-    border-radius: 10rem 0 0 10rem;
     border: none;
-    height: 3rem;
-    width: 20rem;
-    background-color: #f1f1f1;
-    padding: 1.2rem;
-    font-size: 1.1rem;
-    font-weight: 500;
     outline: none;
+    background: none;
+    height: 2rem;
+    width: 25rem;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'Work Sans';
 }
 
 div button{
-    color: grey;
-    height: 3rem;
-    width: 5rem;
-    font-size: 1rem;
-    border-radius: 0 10rem 10rem 0;
+    padding: 0.7rem;
+    margin-right: 0.5rem;
+    width: 3rem;
     border: none;
-    background-color: #e72929;
-    color: white;
+    background: none;
+    color: grey;
     opacity: 0.8;
-    outline: none;
+    font-size: large;
 }
 
 div button:hover{
