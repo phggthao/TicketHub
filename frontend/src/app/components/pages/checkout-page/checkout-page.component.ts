@@ -42,7 +42,7 @@ export class CheckoutPageComponent implements OnInit{
     return this.checkoutForm.controls;
   }
 
-  createOrder(){
+  createOrder() {
     if (this.checkoutForm.invalid){
       this.toastrService.warning('Please fill all the required fields', 'Invalid Inputs');
       return;

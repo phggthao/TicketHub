@@ -8,8 +8,7 @@ import auth from '../middlewares/auth.mid';
 const router = Router();
 router.use(auth);
 
-router.post('/create',
-asyncHandler(async (req:any, res:any) => {
+router.post('/create', asyncHandler(async (req:any, res:any) => {
     const requestOrder = req.body;
 
     if(requestOrder.items.length <= 0){
@@ -26,5 +25,21 @@ asyncHandler(async (req:any, res:any) => {
     await newOrder.save();
     res.send(newOrder);
 }))
+
+router.post('/pay', asyncHandler( async(req: any, res) => {
+    const {paymentId} = req.body;
+    const order = await OrderModel.findOne({user: req.user.id, status: OrderStatus.NEW});
+    if (!order) {
+        res.status(HTTP_BAD_REQUEST).send('Order Not Found!');
+        return; 
+    } 
+
+    order.paymentId = paymentId;
+    order.status = OrderStatus.PROCESSING;
+    await order.save();
+
+    res.send(order._id);
+}))
+
 
 export default router;

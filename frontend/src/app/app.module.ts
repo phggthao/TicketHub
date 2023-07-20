@@ -29,6 +29,7 @@ import { FinishBookingPageComponent } from './components/pages/finish-booking-pa
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { LottieModule } from "ngx-lottie";
 import player from "lottie-web";
+import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 
 export function playerFactory() {
   return player;
@@ -55,7 +56,8 @@ export function playerFactory() {
     CheckoutPageComponent,
     OrderItemsListComponent,
     FinishBookingPageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    PaypalButtonComponent
   ],
   imports: [
     BrowserModule,

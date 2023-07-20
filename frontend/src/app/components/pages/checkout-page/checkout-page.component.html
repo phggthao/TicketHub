@@ -2,25 +2,10 @@
     <div class="content">
         <app-title title="Order Confirmation" fontSize="1.6rem"></app-title>
         <form [formGroup]="checkoutForm">
-            <div class="buyer-info">
-                <h3>Buyer's Information</h3>
-                <text-input [control]="fc.name" label="Full Name"></text-input>
-                <text-input [control]="fc.phone" label="Phone Number"></text-input>
-                <text-input [control]="fc.email" label="Email"></text-input>
-            </div>
-
-            <div class="payment">
-                <h3>Select Payment Method</h3>
-                <div class="payment-select">
-                    <div class="payment-select-radio">
-                        <input type="radio"  id="vnpay" name="pay" value="vnpay"> 
-                        <label for="vnpay">VNPAY</label>
-                    </div>
-                    <div class="payment-select-logo">
-                        <img src="https://pay.vnpay.vn/images/brands/logo-en.svg" alt="" class="payment-select-image">
-                    </div>
-                </div>
-            </div>
+            <h3>Buyer's Information</h3>
+            <text-input [control]="fc.name" label="Full Name"></text-input>
+            <text-input [control]="fc.phone" label="Phone Number"></text-input>
+            <text-input [control]="fc.email" label="Email"></text-input>
         </form>
         
         <div>
@@ -31,7 +16,7 @@
 
     <div class="buttons-container">
         <div class="buttons">
-            <button (click)="createOrder()">Go To Payment</button>
+            <paypal-button [order]="order" (click)="createOrder()"></paypal-button>
         </div>
     </div>
 </div>
