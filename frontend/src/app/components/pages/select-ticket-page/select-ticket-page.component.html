@@ -5,6 +5,23 @@
     resetLinkText="Go To Homepage">
 </app-not-found>
 <div *ngIf="cart && cart.items.length">
+    <div class="event-details">
+        <div class="name">
+            <span>Event Name: <strong>{{event.name}}</strong></span>
+        </div>
+
+        <div class="organizer">
+            <span>Organizer: <strong>{{event.organizer}}</strong></span>
+        </div>
+
+        <div class="location">
+          <span>Location: <strong>{{event.location}}</strong></span>
+        </div>
+
+        <div class="date">
+            <span>Date: <strong>{{event.date}}</strong></span>
+        </div>
+    </div>
     <div class="container">
         <ul>
             <li *ngFor="let cartItem of cart.items">

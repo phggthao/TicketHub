@@ -4,6 +4,7 @@ export class User {
     email!:string;
     phone!:string;
     dob!:string;
+    avatarUrl!:string;
     isOrganizer!:boolean;
     token!:string;
 }

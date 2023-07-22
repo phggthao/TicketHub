@@ -9,6 +9,7 @@ import { CheckoutPageComponent } from './components/pages/checkout-page/checkout
 import { AuthGuard } from './auth/guards/auth.guard';
 import { FinishBookingPageComponent } from './components/pages/finish-booking-page/finish-booking-page.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent },
@@ -17,10 +18,11 @@ const routes: Routes = [
   { path:'event/:id', component:EventPageComponent },
   { path:'event/:id/select-ticket', component:SelectTicketPageComponent, canActivate:[AuthGuard] },
   { path:'event/:id/checkout', component:CheckoutPageComponent, canActivate:[AuthGuard] },
-  { path:'event/:id/finish-booking', component:FinishBookingPageComponent, canActivate:[AuthGuard] },
+  { path:'event/finish-booking', component:FinishBookingPageComponent, canActivate:[AuthGuard] },
   { path:'login', component:LoginPageComponent },
   { path:'register', component:RegisterPageComponent },
-  { path:'profile/:id', component:ProfilePageComponent }
+  { path:'profile/:id', component:ProfilePageComponent, canActivate:[AuthGuard] },
+  { path:'order/:orderId', component:OrderTrackPageComponent, canActivate:[AuthGuard] }
 ];
 
 @NgModule({

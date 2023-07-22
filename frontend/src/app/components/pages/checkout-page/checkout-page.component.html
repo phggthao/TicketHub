@@ -1,6 +1,25 @@
 <div class="container">
     <div class="content">
         <app-title title="Order Confirmation" fontSize="1.6rem"></app-title>
+
+        <div class="event-details">
+            <div class="name">
+                <span>Event Name: <strong>{{event.name}}</strong></span>
+            </div>
+    
+            <div class="organizer">
+                <span>Organizer: <strong>{{event.organizer}}</strong></span>
+            </div>
+    
+            <div class="location">
+              <span>Location: <strong>{{event.location}}</strong></span>
+            </div>
+    
+            <div class="date">
+                <span>Date: <strong>{{event.date}}</strong></span>
+            </div>
+        </div>
+
         <form [formGroup]="checkoutForm">
             <h3>Buyer's Information</h3>
             <text-input [control]="fc.name" label="Full Name"></text-input>

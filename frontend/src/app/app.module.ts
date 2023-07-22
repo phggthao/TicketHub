@@ -30,6 +30,7 @@ import { ProfilePageComponent } from './components/pages/profile-page/profile-pa
 import { LottieModule } from "ngx-lottie";
 import player from "lottie-web";
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 
 export function playerFactory() {
   return player;
@@ -57,7 +58,8 @@ export function playerFactory() {
     OrderItemsListComponent,
     FinishBookingPageComponent,
     ProfilePageComponent,
-    PaypalButtonComponent
+    PaypalButtonComponent,
+    OrderTrackPageComponent
   ],
   imports: [
     BrowserModule,

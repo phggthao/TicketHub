@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ORDER_CREATE_URL, ORDER_PAY_URL } from '../shared/constants/urls';
+import { ORDERS_URL, ORDER_CREATE_URL, ORDER_PAY_URL, ORDER_TRACK_URL } from '../shared/constants/urls';
 import { Order } from '../shared/models/Order';
 import { Observable } from 'rxjs';
 
@@ -17,5 +17,9 @@ export class OrderService {
 
   pay(order: Order): Observable<string> {
     return this.http.post<string>(ORDER_PAY_URL, order);
+  }
+
+  trackOrderById(orderId: number): Observable<Order>{
+    return this.http.get<Order>(ORDER_TRACK_URL + orderId);
   }
 }

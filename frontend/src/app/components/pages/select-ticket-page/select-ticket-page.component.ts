@@ -12,7 +12,7 @@ import { Event } from 'src/app/shared/models/Event';
   styleUrls: ['./select-ticket-page.component.css']
 })
 export class SelectTicketPageComponent implements OnInit {
-  event!:Event;
+  event:Event = new Event();
   cart!:Cart;
   
   constructor(activatedRoute:ActivatedRoute, eventService:EventService, private cartService: CartService, private router:Router) {

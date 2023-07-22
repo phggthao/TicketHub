@@ -167,6 +167,7 @@ export const sample_users: any[] = [
         password: "123",
         phone: "0123456789",
         dob: "2001-09-28",
+        avatarUrl: "assets/avatar.png",
         isOrganizer: true,
     },
     {
@@ -176,6 +177,7 @@ export const sample_users: any[] = [
         password: "123",
         phone: "0123456788",
         dob: "2001-08-27",
+        avatarUrl: "assets/avatar.png",
         isOrganizer: false,
     },
     {
@@ -185,6 +187,7 @@ export const sample_users: any[] = [
         password: "123",
         phone: "0123456787",
         dob: "2001-08-24",
+        avatarUrl: "assets/avatar.png",
         isOrganizer: false,
     },
 ]

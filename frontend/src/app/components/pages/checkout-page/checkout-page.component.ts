@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/services/cart.service';
+import { EventService } from 'src/app/services/event.service';
 import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
+import { Event } from 'src/app/shared/models/Event';
 import { Order } from 'src/app/shared/models/Order';
 
 @Component({
@@ -13,6 +15,7 @@ import { Order } from 'src/app/shared/models/Order';
   styleUrls: ['./checkout-page.component.css']
 })
 export class CheckoutPageComponent implements OnInit{
+  event:Event = new Event();
   order: Order = new Order();
   checkoutForm!: FormGroup;
 
@@ -21,12 +24,21 @@ export class CheckoutPageComponent implements OnInit{
               private userService: UserService, 
               private toastrService: ToastrService,
               private orderService: OrderService,
+              activatedRoute:ActivatedRoute, 
+              eventService:EventService,
               private router: Router) {
                 const cart = cartService.getCart();
                 for (let item of cart.items){
                   if (item.quantity > 0) this.order.items.push(item);
                 }
                 this.order.totalPrice = cart.totalPrice;
+                activatedRoute.params.subscribe((params) => {
+                  if(params.id)
+                    eventService.getEventById(params.id).subscribe(serverEvent => {
+                      this.event = serverEvent;
+                      this.order.eventId = this.event.id;
+                    });
+                })
               }
 
   ngOnInit(): void {
@@ -54,7 +66,7 @@ export class CheckoutPageComponent implements OnInit{
 
     this.orderService.create(this.order).subscribe({
       next:() => {
-        this.router.navigateByUrl('/payment');
+        this.router.navigateByUrl('/event/'+ this.order.eventId + '/finish-booking');
       },
       error:(errorResponse) => {
         this.toastrService.error(errorResponse, 'Error')

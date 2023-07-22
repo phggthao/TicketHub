@@ -5,6 +5,7 @@ import asyncHandler from "express-async-handler";
 import { User, UserModel } from "../models/user.model";
 import { HTTP_BAD_REQUEST } from "../constants/http_status";
 import bcrypt from "bcryptjs";
+import { OrderModel } from "../models/order.model";
 
 const router = Router();
 
@@ -51,6 +52,7 @@ router.post('/register', asyncHandler(
             password: encryptedPassword,
             phone,
             dob,
+            avatarUrl: "assets/avatar.png",
             isOrganizer: false
         }
 
@@ -81,6 +83,13 @@ router.get("/profile/:userId", asyncHandler (
     async (req, res) => {
         const user = await UserModel.findById(req.params.userId);
         res.send(user);
+    }
+))
+
+router.get("/orders/:userId", asyncHandler (
+    async (req, res) => {
+        const orders = await OrderModel.find({user: req.params.userId});
+        res.send(orders);
     }
 ))
 

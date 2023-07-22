@@ -22,8 +22,12 @@
             <span>Organizer: <strong>{{event.organizer}}</strong></span>
         </div>
 
+        <div class="location">
+          <span>Location: <strong>{{event.location}}</strong></span>
+        </div>
+
         <div class="date">
-            <span>Date: <strong>{{event.date}}</strong></span>
+            <span>Date: <strong>{{event.date | date:'fullDate'}}</strong></span>
         </div>
 
         <div class="description">

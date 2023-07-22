@@ -17,7 +17,7 @@
         </div>
 
         <div class="dob">
-            <span>Date of Birth: {{user.dob}}</span>
+            <span>Date of Birth: {{user.dob | date}}</span>
         </div>
 
         <div class="phone">
@@ -25,5 +25,22 @@
         </div>
         <button>Edit Your Profile</button>
         <button>Change Your Password</button>
+        <button>My Tickets</button>
+
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Event ID</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+            <tr *ngFor="let order of orders" routerLink="/order/{{order.id}}">
+                <td>{{order.id}}</td>
+                <td>{{order.eventId}}</td>
+                <td>{{order.totalPrice | currency}}</td>
+                <td>{{order.status}}</td>
+            </tr>
+        </table>
+
     </div>
 </div>

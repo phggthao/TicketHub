@@ -7,6 +7,7 @@ export interface User{
     password:string;
     phone:string;
     dob:Date;
+    avatarUrl:string;
     isOrganizer:boolean;
 }
 
@@ -16,6 +17,7 @@ export const UserSchema = new Schema<User>({
     password: {type:String, required:true},
     phone: {type:String, required:true},
     dob: {type:Date, required:true},
+    avatarUrl:{type:String, required:true},
     isOrganizer: {type:Boolean, required:true},
 }, {
     timestamps: true,

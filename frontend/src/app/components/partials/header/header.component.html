@@ -3,6 +3,7 @@
         <a routerLink="/" class="logo">
             <img src="../../../../assets/icon/logoText.png">
         </a>
+        <app-search></app-search>
         <nav>
             <ul>
                 <li>
@@ -12,11 +13,10 @@
                     <a routerLink="/login">Login | Register</a>
                 </li>
                 <li *ngIf="isAuth" class="menu-container">
-                    <a class="user"><span><img src="../../../../assets/icon/icon.png"></span>{{user.name}}</a>
+                    <a class="user"><span><img src="{{user.avatarUrl}}"></span>{{user.name}}</a>
                     <div class="menu">
                         <a routerLink="/profile/{{user.id}}">My Profile</a>
-                        <a routerLink="/my-tickets">My Tickets</a>
-                        <a *ngIf="isOrganizer" routerLink="/organizer">Organizer Profile</a>
+                        <a *ngIf="isOrganizer" routerLink="/organizer">My Organizer Profile</a>
                         <a (click)="logOut()">Logout</a>
                     </div>
                 </li>

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { sample_categories, sample_events } from "../data";
+import { sample_events } from "../data";
 import asyncHandler from "express-async-handler";
 import { EventModel } from "../models/event.model";
 
