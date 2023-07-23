@@ -5,6 +5,7 @@ header{
     background: white;
     z-index: 100000;
     box-shadow: 0px 1px 5px grey;
+    overflow: hidden;
 }
 
 app-search{
@@ -27,12 +28,12 @@ a:hover{
 }
 
 .container{
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-ul{
+.container ul{
     display: flex;
     list-style-type: none;
     margin: 0 0.5rem;
@@ -92,4 +93,10 @@ a span img{ /*user avatar*/
     background: #5e00e5;
     color: white;
     border-radius: 5px;
+}
+
+@media (max-width: 1000px){ 
+    app-search {
+        visibility: hidden;
+    }
 }

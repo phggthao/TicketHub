@@ -4,23 +4,21 @@
             <img src="../../../../assets/icon/logoText.png">
         </a>
         <app-search></app-search>
-        <nav>
-            <ul>
-                <li>
-                    <button>Create Event</button>
-                </li>
-                <li *ngIf="!isAuth">
-                    <a routerLink="/login">Login | Register</a>
-                </li>
-                <li *ngIf="isAuth" class="menu-container">
-                    <a class="user"><span><img src="{{user.avatarUrl}}"></span>{{user.name}}</a>
-                    <div class="menu">
-                        <a routerLink="/profile/{{user.id}}">My Profile</a>
-                        <a *ngIf="isOrganizer" routerLink="/organizer">My Organizer Profile</a>
-                        <a (click)="logOut()">Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+        <ul>
+            <li>
+                <button>Create Event</button>
+            </li>
+            <li *ngIf="!isAuth">
+                <a routerLink="/login">Login | Register</a>
+            </li>
+            <li *ngIf="isAuth" class="menu-container">
+                <a class="user"><span><img src="{{user.avatarUrl}}"></span>{{user.name}}</a>
+                <div class="menu">
+                    <a routerLink="/profile/{{user.id}}">My Profile</a>
+                    <a *ngIf="isOrganizer" routerLink="/organizer">My Organizer Profile</a>
+                    <a (click)="logOut()">Logout</a>
+                </div>
+            </li>
+        </ul>
     </div>
 </header>
