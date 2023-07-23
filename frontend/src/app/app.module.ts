@@ -31,6 +31,8 @@ import { LottieModule } from "ngx-lottie";
 import player from "lottie-web";
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { CarouselComponent } from './components/partials/carousel/carousel.component';
+import { SwiperModule } from 'swiper/angular';
 
 export function playerFactory() {
   return player;
@@ -59,7 +61,8 @@ export function playerFactory() {
     FinishBookingPageComponent,
     ProfilePageComponent,
     PaypalButtonComponent,
-    OrderTrackPageComponent
+    OrderTrackPageComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -67,12 +70,14 @@ export function playerFactory() {
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    SwiperModule,
     ToastrModule.forRoot({
       timeOut:3000,
       positionClass:'toast-bottom-right',
       newestOnTop:false
     }),
-    LottieModule.forRoot({player: playerFactory})
+    LottieModule.forRoot({player: playerFactory}),
+    // CarouselModule.forRoot()
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true},

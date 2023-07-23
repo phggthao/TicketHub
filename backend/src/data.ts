@@ -3,15 +3,15 @@ export const sample_tickets_1:any[] = [
         id: '1',
         class: 'VIP Ticket',
         quantity: 50,
-        price: 1000000,
-        description: 'Lorem Ipsum is simply dummy text',
+        price: 100,
+        description: 'VIP priority check-in with exclusive merchandise',
     },
     { 
         id: '2',
         class: 'Normal Ticket',
         quantity: 50,
-        price: 500000,
-        description: 'Lorem Ipsum is simply dummy text',
+        price: 500,
+        description: 'Normal entry, no merchandise',
     }
 ]
 
@@ -20,15 +20,15 @@ export const sample_tickets_2:any[] = [
         id: '1',
         class: 'VIP Ticket',
         quantity: 50,
-        price: 1000000,
-        description: 'Lorem Ipsum is simply dummy text',
+        price: 100,
+        description: 'VIP priority check-in with exclusive merchandise',
     },
     { 
         id: '2',
         class: 'Normal Ticket',
         quantity: 50,
-        price: 500000,
-        description: 'Lorem Ipsum is simply dummy text',
+        price: 500,
+        description: 'Normal entry, no merchandise',
     }
 ]
 
@@ -37,22 +37,22 @@ export const sample_tickets_3:any[] = [
         id: '1',
         class: 'VIP Ticket',
         quantity: 500,
-        price: 1999000,
-        description: 'Lorem Ipsum is simply dummy text',
+        price: 199,
+        description: 'VIP priority check-in with exclusive merchandise',
     },
     { 
         id: '2',
         class: 'General Access Ticket',
-        quantity: 400000,
+        quantity: 4000,
         price: 169,
-        description: 'Lorem Ipsum is simply dummy text',
+        description: 'Normal entry, first come first serve, no merchandise',
     },
     { 
         id: '3',
         class: 'Early Bird Ticket',
-        quantity: 299000,
+        quantity: 100,
         price: 139,
-        description: 'Lorem Ipsum is simply dummy text',
+        description: 'Having all benefits of General Access tickets but with a much better price',
     }
 ]
 
@@ -61,22 +61,22 @@ export const sample_tickets_4:any[] = [
         id: '1',
         class: 'VIP Ticket',
         quantity: 500,
-        price: 1999000,
-        description: 'Lorem Ipsum is simply dummy text',
+        price: 199,
+        description: 'VIP priority check-in with exclusive merchandise',
     },
     { 
         id: '2',
         class: 'General Access',
         quantity: 4000,
-        price: 890000,
-        description: 'Lorem Ipsum is simply dummy text',
+        price: 169,
+        description: 'Normal entry, first come first serve, no merchandise',
     },
     { 
         id: '3',
         class: 'Early Bird Ticket',
         quantity: 100,
-        price: 690000,
-        description: 'Lorem Ipsum is simply dummy text',
+        price: 139,
+        description: 'Having all benefits of General Access tickets but with a much better price',
     }
 ]
 
@@ -85,8 +85,8 @@ export const sample_tickets_5:any[] = [
         id: '1',
         class: 'Standing Ticket',
         quantity: 5000,
-        price: 599000,
-        description: 'Lorem Ipsum is simply dummy text',
+        price: 169,
+        description: 'Standing will have queue number, first come first serve',
     }
 ]
 

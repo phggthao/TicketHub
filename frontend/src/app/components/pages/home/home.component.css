@@ -6,19 +6,21 @@
 }
 
 .circle{
-    position: absolute;
-    top: 12%;
+    position: relative;
+    margin-top: 2rem;
     left: 25%;
+    align-self: flex-start;
     z-index: -1;
     background: #e6e7fe;
     border: none;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
 h1{
-    margin-top: 3rem;
+    margin-top: -10rem;
+    margin-bottom: 1rem;
 }
 
 h5{
