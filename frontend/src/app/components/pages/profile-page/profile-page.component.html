@@ -4,43 +4,45 @@
     resetLinkText="Back To Homepage">
 </app-not-found>
 <div *ngIf="user" class="container">
-    <app-title title="My Profile" fontSize="1.6rem"></app-title>
-    <!--<img [src]="user.imageUrl" [alt]="user.name"/>-->
-    
-    <div class="details">
-        <div class="name">
-            <span>Full Name: {{user.name}}</span>
+    <side-nav menu1="My Profile" router1="/profile/{{user.id}}" menu2="My Tickets"></side-nav>
+
+    <div class="content">
+        <app-title title="My Profile" fontSize="1.6rem"></app-title>
+        
+        <div class="details">
+            <!--<img [src]="user.imageUrl" [alt]="user.name"/>-->
+            <div class="name">
+                <span>Full Name: {{user.name}}</span>
+            </div>
+
+            <div class="email">
+                <span>Email: {{user.email}}</span>
+            </div>
+
+            <div class="dob">
+                <span>Date of Birth: {{user.dob | date}}</span>
+            </div>
+
+            <div class="phone">
+                <span>Phone Number: {{user.phone}}</span>
+            </div>
+            <button>Edit Your Profile</button>
+            <button>Change Your Password</button>
+
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Event ID</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                </tr>
+                <tr *ngFor="let order of orders" routerLink="/order/{{order.id}}">
+                    <td>{{order.id}}</td>
+                    <td>{{order.eventId}}</td>
+                    <td>{{order.totalPrice | currency}}</td>
+                    <td>{{order.status}}</td>
+                </tr>
+            </table>
         </div>
-
-        <div class="email">
-            <span>Email: {{user.email}}</span>
-        </div>
-
-        <div class="dob">
-            <span>Date of Birth: {{user.dob | date}}</span>
-        </div>
-
-        <div class="phone">
-            <span>Phone Number: {{user.phone}}</span>
-        </div>
-        <button>Edit Your Profile</button>
-        <button>Change Your Password</button>
-        <button>My Tickets</button>
-
-        <table>
-            <tr>
-                <th>Order ID</th>
-                <th>Event ID</th>
-                <th>Price</th>
-                <th>Status</th>
-            </tr>
-            <tr *ngFor="let order of orders" routerLink="/order/{{order.id}}">
-                <td>{{order.id}}</td>
-                <td>{{order.eventId}}</td>
-                <td>{{order.totalPrice | currency}}</td>
-                <td>{{order.status}}</td>
-            </tr>
-        </table>
-
     </div>
 </div>

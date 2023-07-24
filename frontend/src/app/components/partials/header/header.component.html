@@ -18,6 +18,7 @@
                 <a class="user"><span><img src="{{user.avatarUrl}}"></span>{{user.name}}</a>
                 <div class="menu">
                     <a routerLink="/profile/{{user.id}}">My Profile</a>
+                    <a >My Tickets</a>
                     <a *ngIf="isOrganizer" routerLink="/organizer">My Organizer Profile</a>
                     <a (click)="logOut()">Logout</a>
                 </div>

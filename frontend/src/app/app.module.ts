@@ -34,6 +34,7 @@ import { OrderTrackPageComponent } from './components/pages/order-track-page/ord
 import { CarouselComponent } from './components/partials/carousel/carousel.component';
 import { SwiperModule } from 'swiper/angular';
 import { OrganizerRegisterPageComponent } from './components/pages/organizer-register-page/organizer-register-page.component';
+import { SideNavComponent } from './components/partials/side-nav/side-nav.component';
 
 export function playerFactory() {
   return player;
@@ -64,7 +65,8 @@ export function playerFactory() {
     PaypalButtonComponent,
     OrderTrackPageComponent,
     CarouselComponent,
-    OrganizerRegisterPageComponent
+    OrganizerRegisterPageComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
