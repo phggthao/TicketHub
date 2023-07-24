@@ -6,10 +6,12 @@ export const EVENTS_BY_SEARCH_URL = EVENTS_URL + '/search/';
 export const EVENTS_BY_CATEGORY_URL = EVENTS_URL + '/category/';
 export const EVENT_BY_ID_URL = EVENTS_URL + '/';
 
-export const USER_LOGIN_URL = BASE_URL + '/api/users/login';
-export const USER_REGISTER_URL = BASE_URL + '/api/users/register';
-export const USER_PROFILE_URL = BASE_URL + '/api/users/profile/';
-export const USER_ORDERS_URL = BASE_URL + '/api/users/orders/';
+export const USERS_URL = BASE_URL + '/api/users';
+export const USER_LOGIN_URL = USERS_URL + '/login';
+export const USER_REGISTER_URL = USERS_URL + '/register';
+export const USER_PROFILE_URL = USERS_URL + '/profile/';
+export const USER_ORDERS_URL = USERS_URL + '/orders/';
+export const USER_ORGANIZER_REGISTER_URL = USERS_URL + '/organizer/register';
 
 export const ORDERS_URL = BASE_URL + '/api/orders';
 export const ORDER_CREATE_URL = ORDERS_URL + '/create';

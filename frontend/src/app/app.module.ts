@@ -33,6 +33,7 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { CarouselComponent } from './components/partials/carousel/carousel.component';
 import { SwiperModule } from 'swiper/angular';
+import { OrganizerRegisterPageComponent } from './components/pages/organizer-register-page/organizer-register-page.component';
 
 export function playerFactory() {
   return player;
@@ -62,7 +63,8 @@ export function playerFactory() {
     ProfilePageComponent,
     PaypalButtonComponent,
     OrderTrackPageComponent,
-    CarouselComponent
+    CarouselComponent,
+    OrganizerRegisterPageComponent
   ],
   imports: [
     BrowserModule,

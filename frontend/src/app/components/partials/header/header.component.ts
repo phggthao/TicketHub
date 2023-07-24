@@ -22,6 +22,9 @@ export class HeaderComponent implements OnInit {
     this.userService.logOut();
   }
 
+  createEvent() {
+  }
+
   get isAuth() {
     return this.user.token;
   }

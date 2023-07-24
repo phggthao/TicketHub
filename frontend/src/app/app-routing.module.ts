@@ -10,6 +10,7 @@ import { AuthGuard } from './auth/guards/auth.guard';
 import { FinishBookingPageComponent } from './components/pages/finish-booking-page/finish-booking-page.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { OrganizerRegisterPageComponent } from './components/pages/organizer-register-page/organizer-register-page.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path:'login', component:LoginPageComponent },
   { path:'register', component:RegisterPageComponent },
   { path:'profile/:id', component:ProfilePageComponent, canActivate:[AuthGuard] },
-  { path:'order/:orderId', component:OrderTrackPageComponent, canActivate:[AuthGuard] }
+  { path:'order/:orderId', component:OrderTrackPageComponent, canActivate:[AuthGuard] },
+  { path:'organizer/register', component:OrganizerRegisterPageComponent, canActivate:[AuthGuard] }
 ];
 
 @NgModule({

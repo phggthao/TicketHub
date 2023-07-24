@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="details">
+        <app-title title="Set Up Your Organizer Profile"></app-title>
+        <form [formGroup]="organizerForm" (ngSubmit)="submit()">
+            <text-input 
+                [control]="fc.name"
+                [showErrorsWhen]="isSubmitted"
+                label="Full Name">
+            </text-input>
+
+            <text-input 
+                [control]="fc.email"
+                [showErrorsWhen]="isSubmitted"
+                label="Email"
+                type="email">
+            </text-input>
+
+            <text-input 
+                [control]="fc.phone"
+                [showErrorsWhen]="isSubmitted"
+                label="Phone Number">
+            </text-input>
+
+            <text-input 
+                [control]="fc.city"
+                [showErrorsWhen]="isSubmitted"
+                label="City/Province">
+            </text-input>
+
+            <text-input 
+                [control]="fc.district"
+                [showErrorsWhen]="isSubmitted"
+                label="District">
+            </text-input>
+
+            <text-input 
+                [control]="fc.ward"
+                [showErrorsWhen]="isSubmitted"
+                label="Ward">
+            </text-input>
+
+            <text-input 
+                [control]="fc.address"
+                [showErrorsWhen]="isSubmitted"
+                label="Address">
+            </text-input>
+
+            <default-button text="Submit"></default-button>
+        </form>
+    </div>
+</div>

@@ -6,7 +6,7 @@
         <app-search></app-search>
         <ul>
             <li>
-                <button>Create Event</button>
+                <button (click)="createEvent()">Create Event</button>
             </li>
             <li *ngIf="!isAuth">
                 <a routerLink="/login">Login | Register</a>

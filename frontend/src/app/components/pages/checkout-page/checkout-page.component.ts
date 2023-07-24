@@ -15,7 +15,7 @@ import { Order } from 'src/app/shared/models/Order';
   styleUrls: ['./checkout-page.component.css']
 })
 export class CheckoutPageComponent implements OnInit{
-  event:Event = new Event();
+  event: Event = new Event();
   order: Order = new Order();
   checkoutForm!: FormGroup;
 
@@ -46,7 +46,7 @@ export class CheckoutPageComponent implements OnInit{
     this.checkoutForm = this.formBuilder.group({
       name: [name, Validators.required],
       phone: [phone, Validators.required],
-      email: [email, Validators.required]
+      email: [email, Validators.required, Validators.email]
     });
   }
 

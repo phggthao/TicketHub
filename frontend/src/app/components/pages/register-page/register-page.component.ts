@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user.service';
 import { IUserRegister } from 'src/app/shared/interfaces/IUserRegister';
 import { PasswordsMatchValidator } from 'src/app/shared/validators/password_match_validator';
@@ -19,7 +20,8 @@ export class RegisterPageComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastrService: ToastrService
   ) { }
   
   ngOnInit(): void {
@@ -43,7 +45,10 @@ export class RegisterPageComponent implements OnInit {
 
   submit() {
     this.isSubmitted = true;
-    if (this.registerForm.invalid) return;
+    if (this.registerForm.invalid) {
+      this.toastrService.warning('Please fill all the required fields', 'Invalid Inputs');
+      return;
+    }
 
     const fv = this.registerForm.value;
     const user: IUserRegister = {
