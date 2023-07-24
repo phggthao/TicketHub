@@ -89,16 +89,16 @@ router.get("/profile/:userId", asyncHandler (
     }
 ))
 
-router.get("/orders/:userId", asyncHandler (
-    async (req, res) => {
-        const orders = await OrderModel.find({user: req.params.userId});
-        res.send(orders);
-    }
-))
-
 router.post("/organizer/register", asyncHandler (
     async (req: any, res: any) => {
         const {name, email, phone, city, district, ward, address} = req.body;
+
+        const isOrganizer = await OrganizerModel.findOne({user: req.user.id});
+        if (isOrganizer) {
+            res.status(HTTP_BAD_REQUEST).send("You have already registered as an organizer");
+            return;
+        }
+
         const organizer = await OrganizerModel.findOne({email});
         if(organizer) {
             res.status(HTTP_BAD_REQUEST).send("An organizer with that email has already exist, please try another one!");

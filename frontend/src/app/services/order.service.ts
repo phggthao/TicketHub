@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ORDERS_URL, ORDER_CREATE_URL, ORDER_PAY_URL, ORDER_TRACK_URL } from '../shared/constants/urls';
+import { ORDERS_BY_USER_URL, ORDER_BY_ID_URL, ORDER_CREATE_URL, ORDER_PAY_URL } from '../shared/constants/urls';
 import { Order } from '../shared/models/Order';
 import { Observable } from 'rxjs';
 
@@ -19,7 +19,11 @@ export class OrderService {
     return this.http.post<string>(ORDER_PAY_URL, order);
   }
 
+  trackOrdersByUser(userId:string): Observable<Order[]>{
+    return this.http.get<Order[]>(ORDERS_BY_USER_URL + userId);
+  }
+
   trackOrderById(orderId: number): Observable<Order>{
-    return this.http.get<Order>(ORDER_TRACK_URL + orderId);
+    return this.http.get<Order>(ORDER_BY_ID_URL + orderId);
   }
 }

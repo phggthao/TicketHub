@@ -3,10 +3,9 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/User';
 import { HttpClient } from '@angular/common/http';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
-import { USER_LOGIN_URL, USER_ORDERS_URL, USER_ORGANIZER_REGISTER_URL, USER_PROFILE_URL, USER_REGISTER_URL } from '../shared/constants/urls';
+import { USER_LOGIN_URL, USER_ORGANIZER_REGISTER_URL, USER_PROFILE_URL, USER_REGISTER_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
-import { Order } from '../shared/models/Order';
 import { Organizer } from '../shared/models/Organizer';
 
 const USER_KEY = 'User';
@@ -63,10 +62,6 @@ export class UserService {
 
   getUserById(userId:string): Observable<User>{
     return this.http.get<User>(USER_PROFILE_URL + userId);
-  }
-
-  trackOrder(userId:string): Observable<Order[]>{
-    return this.http.get<Order[]>(USER_ORDERS_URL + userId);
   }
 
   organizerRegister(organizer: Organizer): Observable<Organizer> {

@@ -6,7 +6,10 @@
         <app-search></app-search>
         <ul>
             <li>
-                <button (click)="createEvent()">Create Event</button>
+                <button *ngIf="!isOrganizer" routerLink="/organizer/register">Create Event</button>
+            </li>
+            <li>
+                <button *ngIf="isOrganizer" (click)="createEvent()">Create Event</button>
             </li>
             <li *ngIf="!isAuth">
                 <a routerLink="/login">Login | Register</a>

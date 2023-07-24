@@ -46,4 +46,11 @@ router.get('/track/:id', asyncHandler( async (req, res) => {
     res.send(order);
 }))
 
+router.get("/user/:userId", asyncHandler (
+    async (req, res) => {
+        const orders = await OrderModel.find({user: req.params.userId});
+        res.send(orders);
+    }
+))
+
 export default router;
