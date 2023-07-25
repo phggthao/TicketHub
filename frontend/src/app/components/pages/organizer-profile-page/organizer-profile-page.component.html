@@ -1,0 +1,45 @@
+<app-not-found 
+    [visible]="!organizer"
+    notFoundMessage="Page Not Found"
+    resetLinkText="Back To Homepage">
+</app-not-found>
+<div *ngIf="organizer" class="container">
+    <side-nav menu1="Organizer Profile" router1="/organizer/profile" 
+            menu2="My Events" router2=""
+            menu3="Statistic" router3=""></side-nav>
+
+    <div class="content">
+        <app-title title="Organizer Profile" fontSize="1.6rem"></app-title>
+        
+        <div class="details">
+            <div class="name">
+                <span>Organizer Name: {{organizer.name}}</span>
+            </div>
+
+            <div class="email">
+                <span>Email: {{organizer.email}}</span>
+            </div>
+
+            <div class="phone">
+                <span>Phone Number: {{organizer.phone}}</span>
+            </div>
+
+            <div class="city">
+                <span>City: {{organizer.city}}</span>
+            </div>
+
+            <div class="district">
+                <span>District: {{organizer.district}}</span>
+            </div>
+
+            <div class="ward">
+                <span>Ward: {{organizer.ward}}</span>
+            </div>
+
+            <div class="address">
+                <span>Address: {{organizer.address}}</span>
+            </div>
+            <button>Edit Your Organizer Profile</button>
+        </div>
+    </div>
+</div>

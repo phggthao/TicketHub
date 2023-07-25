@@ -12,12 +12,10 @@ import { User } from 'src/app/shared/models/User';
 export class ProfilePageComponent implements OnInit{
   user!: User;
   orders: Order[] = [];
-  constructor(userService:UserService, activatedRoute: ActivatedRoute) {
-    activatedRoute.params.subscribe((params) => {
-      if(params.id)
-        userService.getUserById(params.id).subscribe(serverUser => {
-          this.user = serverUser;})
-    });
+  constructor(userService:UserService) {
+    userService.userObservable.subscribe((currentUser) => {
+      this.user = currentUser;
+    })
   }
   
 

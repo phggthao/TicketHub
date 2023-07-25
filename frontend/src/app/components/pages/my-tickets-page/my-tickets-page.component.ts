@@ -16,15 +16,13 @@ export class MyTicketsPageComponent implements OnInit{
   orders: Order[] = [];
   constructor(userService:UserService, activatedRoute: ActivatedRoute, orderService: OrderService) {
     let ordersObservable: Observable<Order[]>;
-    activatedRoute.params.subscribe((params) => {
-      if(params.id)
-        userService.getUserById(params.id).subscribe(serverUser => {
-          this.user = serverUser;
-          ordersObservable = orderService.trackOrdersByUser(this.user.id);
-          ordersObservable.subscribe((serverOrders) => {
-            this.orders = serverOrders;
-          })
-        });
+
+    userService.userObservable.subscribe((currentUser) => {
+      this.user = currentUser;
+    })
+    ordersObservable = orderService.trackOrdersByUser(this.user.id);
+    ordersObservable.subscribe((serverOrders) => {
+      this.orders = serverOrders;
     })
   }
 

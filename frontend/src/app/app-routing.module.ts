@@ -12,6 +12,7 @@ import { ProfilePageComponent } from './components/pages/profile-page/profile-pa
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { OrganizerRegisterPageComponent } from './components/pages/organizer-register-page/organizer-register-page.component';
 import { MyTicketsPageComponent } from './components/pages/my-tickets-page/my-tickets-page.component';
+import { OrganizerProfilePageComponent } from './components/pages/organizer-profile-page/organizer-profile-page.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent },
@@ -23,10 +24,11 @@ const routes: Routes = [
   { path:'event/finish-booking', component:FinishBookingPageComponent, canActivate:[AuthGuard] },
   { path:'login', component:LoginPageComponent },
   { path:'register', component:RegisterPageComponent },
-  { path:'profile/:id', component:ProfilePageComponent, canActivate:[AuthGuard] },
-  { path:'my-tickets/:id', component:MyTicketsPageComponent, canActivate:[AuthGuard] },
+  { path:'profile', component:ProfilePageComponent, canActivate:[AuthGuard] },
+  { path:'my-tickets', component:MyTicketsPageComponent, canActivate:[AuthGuard] },
   { path:'order/:orderId', component:OrderTrackPageComponent, canActivate:[AuthGuard] },
-  { path:'organizer/register', component:OrganizerRegisterPageComponent, canActivate:[AuthGuard] }
+  { path:'organizer/register', component:OrganizerRegisterPageComponent, canActivate:[AuthGuard] },
+  { path:'organizer/profile', component:OrganizerProfilePageComponent, canActivate:[AuthGuard] },
 ];
 
 @NgModule({

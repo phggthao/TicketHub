@@ -4,8 +4,8 @@
     resetLinkText="Back To Homepage">
 </app-not-found>
 <div *ngIf="user" class="container">
-    <side-nav menu1="My Profile" router1="/profile/{{user.id}}" 
-            menu2="My Tickets" router2="/my-tickets/{{user.id}}"></side-nav>
+    <side-nav menu1="My Profile" router1="/profile" 
+            menu2="My Tickets" router2="/my-tickets"></side-nav>
 
     <div class="content">
         <app-title title="My Profile" fontSize="1.6rem"></app-title>

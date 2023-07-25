@@ -16,22 +16,22 @@
             <li *ngIf="!isAuth">
                 <a routerLink="/login">Login | Register</a>
             </li>
-            
+
             <li *ngIf="isAuth" class="menu-container">
                 <a class="user"><span><img src="{{user.avatarUrl}}"></span>{{user.name}}</a>
                 
                 <div class="menu">
-                    <a routerLink="/profile/{{user.id}}">
+                    <a routerLink="/profile">
                         <span><i class="fa-regular fa-address-card"></i></span>
                         <span>Profile</span>
                     </a>
                     
-                    <a routerLink="/my-tickets/{{user.id}}">
+                    <a routerLink="/my-tickets">
                         <span><i class="fa-solid fa-ticket"></i></span>
                         <span>My Tickets</span>
                     </a>
                     
-                    <a *ngIf="isOrganizer" routerLink="/organizer">
+                    <a *ngIf="isOrganizer" routerLink="/organizer/profile">
                         <span><i class="fa-solid fa-chart-simple"></i></span>
                         <span>Organizer Dashboard</span>
                     </a>

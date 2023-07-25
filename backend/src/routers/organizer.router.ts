@@ -51,7 +51,7 @@ router.post("/register", asyncHandler (
 
 router.get("/profile/:id", asyncHandler (
     async (req, res) => {
-        const organizer = await OrganizerModel.findById(req.params.id);
+        const organizer = await OrganizerModel.findOne({user: req.params.id});
         res.send(organizer);
     }
 ))

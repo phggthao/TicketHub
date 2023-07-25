@@ -39,8 +39,8 @@ export class OrganizerService {
     )
   }
 
-  getOrganizerById(organizerId:string): Observable<Organizer>{
-    return this.http.get<Organizer>(ORGANIZER_PROFILE_URL + organizerId);
+  getOrganizerByUserId(userId:string): Observable<Organizer>{
+    return this.http.get<Organizer>(ORGANIZER_PROFILE_URL + userId);
   }
 
   private setOrganizerToLocalStorage(organizer:Organizer){

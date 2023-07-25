@@ -4,13 +4,19 @@
     resetLinkText="Back To Homepage">
 </app-not-found>
 <div *ngIf="user" class="container">
-    <side-nav menu1="My Profile" router1="/profile/{{user.id}}" 
-            menu2="My Tickets" router2="/my-tickets/{{user.id}}"></side-nav>
+    <side-nav menu1="My Profile" router1="/profile" 
+            menu2="My Tickets" router2="/my-tickets"></side-nav>
 
     <div class="content">
         <app-title title="My Tickets" fontSize="1.6rem"></app-title>
         
-        <div class="details">
+        <app-not-found 
+            [visible]="orders.length<=0"
+            notFoundMessage="You haven't bought any tickets from TicketHub. Start booking now!"
+            resetLinkText="Back To Homepage">
+        </app-not-found>
+
+        <div *ngIf="orders.length>0" class="details">
             <table>
                 <tr>
                     <th>Order ID</th>
