@@ -8,19 +8,38 @@
             <li>
                 <button *ngIf="!isOrganizer" routerLink="/organizer/register">Create Event</button>
             </li>
+
             <li>
                 <button *ngIf="isOrganizer" (click)="createEvent()">Create Event</button>
             </li>
+
             <li *ngIf="!isAuth">
                 <a routerLink="/login">Login | Register</a>
             </li>
+            
             <li *ngIf="isAuth" class="menu-container">
                 <a class="user"><span><img src="{{user.avatarUrl}}"></span>{{user.name}}</a>
+                
                 <div class="menu">
-                    <a routerLink="/profile/{{user.id}}">My Profile</a>
-                    <a >My Tickets</a>
-                    <a *ngIf="isOrganizer" routerLink="/organizer">My Organizer Profile</a>
-                    <a (click)="logOut()">Logout</a>
+                    <a routerLink="/profile/{{user.id}}">
+                        <span><i class="fa-regular fa-address-card"></i></span>
+                        <span>Profile</span>
+                    </a>
+                    
+                    <a routerLink="/my-tickets/{{user.id}}">
+                        <span><i class="fa-solid fa-ticket"></i></span>
+                        <span>My Tickets</span>
+                    </a>
+                    
+                    <a *ngIf="isOrganizer" routerLink="/organizer">
+                        <span><i class="fa-solid fa-chart-simple"></i></span>
+                        <span>Organizer Dashboard</span>
+                    </a>
+                    
+                    <a (click)="logOut()">
+                        <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span>Logout</span>
+                    </a>
                 </div>
             </li>
         </ul>

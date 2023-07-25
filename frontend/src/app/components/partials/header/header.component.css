@@ -78,20 +78,27 @@ a span img{ /*user avatar*/
 .menu-container:hover .menu{
     display: block;
     box-shadow: 0px 1px 3px black;
+    right: 1rem;
 }
 
 .menu a{
     width: 100%;
-    min-width: 8rem;
+    min-width: 12rem;
     display: flex;
     align-items: center;
-    padding: 0;
+    justify-content: left;
+    padding: 1rem;
+    font-size: large;
 }
 
 .menu a:hover{
     background: #5e00e5;
     color: white;
     border-radius: 5px;
+}
+
+.menu a span {
+    margin-right: 1rem;
 }
 
 @media (max-width: 1000px){ 

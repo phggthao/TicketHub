@@ -35,6 +35,7 @@ import { CarouselComponent } from './components/partials/carousel/carousel.compo
 import { SwiperModule } from 'swiper/angular';
 import { OrganizerRegisterPageComponent } from './components/pages/organizer-register-page/organizer-register-page.component';
 import { SideNavComponent } from './components/partials/side-nav/side-nav.component';
+import { MyTicketsPageComponent } from './components/pages/my-tickets-page/my-tickets-page.component';
 
 export function playerFactory() {
   return player;
@@ -66,7 +67,8 @@ export function playerFactory() {
     OrderTrackPageComponent,
     CarouselComponent,
     OrganizerRegisterPageComponent,
-    SideNavComponent
+    SideNavComponent,
+    MyTicketsPageComponent
   ],
   imports: [
     BrowserModule,

@@ -32,6 +32,7 @@
 .sidebar li a:hover{
     cursor: pointer;
     opacity: 0.8;
+    transition: all 0.4s ease;
 }
 
 .menu{

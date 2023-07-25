@@ -5,12 +5,8 @@ import asyncHandler from "express-async-handler";
 import { User, UserModel } from "../models/user.model";
 import { HTTP_BAD_REQUEST } from "../constants/http_status";
 import bcrypt from "bcryptjs";
-import { OrderModel } from "../models/order.model";
-import { OrganizerModel, Organizer } from "../models/organizer.model";
-import auth from '../middlewares/auth.mid';
 
 const router = Router();
-router.use(auth);
 
 router.get("/seed", asyncHandler(
     async (req, res) => {
@@ -86,39 +82,6 @@ router.get("/profile/:userId", asyncHandler (
     async (req, res) => {
         const user = await UserModel.findById(req.params.userId);
         res.send(user);
-    }
-))
-
-router.post("/organizer/register", asyncHandler (
-    async (req: any, res: any) => {
-        const {name, email, phone, city, district, ward, address} = req.body;
-
-        const isOrganizer = await OrganizerModel.findOne({user: req.user.id});
-        if (isOrganizer) {
-            res.status(HTTP_BAD_REQUEST).send("You have already registered as an organizer");
-            return;
-        }
-
-        const organizer = await OrganizerModel.findOne({email});
-        if(organizer) {
-            res.status(HTTP_BAD_REQUEST).send("An organizer with that email has already exist, please try another one!");
-            return;
-        }
-
-        const newOrganizer: Organizer = {
-            id: '',
-            user: req.user.id,
-            name,
-            email,
-            phone,
-            city,
-            district,
-            ward,
-            address
-        };
-
-        const dbOrganizer = await OrganizerModel.create(newOrganizer);
-        res.send(dbOrganizer);
     }
 ))
 

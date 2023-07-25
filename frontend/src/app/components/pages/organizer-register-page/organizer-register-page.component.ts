@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { OrganizerService } from 'src/app/services/organizer.service';
 import { UserService } from 'src/app/services/user.service';
 import { Organizer } from 'src/app/shared/models/Organizer';
 
@@ -19,7 +20,7 @@ export class OrganizerRegisterPageComponent implements OnInit{
 
   constructor(private formBuilder: FormBuilder, private userService: UserService,
               private activatedRoute: ActivatedRoute, private router: Router,
-              private toastrService: ToastrService) {}
+              private toastrService: ToastrService, private organizerService: OrganizerService) {}
 
   ngOnInit(): void {
     let { phone, email } = this.userService.currentUser;
@@ -56,9 +57,7 @@ export class OrganizerRegisterPageComponent implements OnInit{
     this.organizer.ward = this.organizerForm.value.ward;
     this.organizer.address = this.organizerForm.value.address;
 
-    this.userService.currentUser.isOrganizer = true;
-
-    this.userService.organizerRegister(this.organizer).subscribe(_ => {
+    this.organizerService.register(this.organizer).subscribe(_ => {
       this.router.navigateByUrl(this.returnUrl);
     })
   }

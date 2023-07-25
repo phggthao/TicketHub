@@ -11,6 +11,7 @@ import { FinishBookingPageComponent } from './components/pages/finish-booking-pa
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { OrganizerRegisterPageComponent } from './components/pages/organizer-register-page/organizer-register-page.component';
+import { MyTicketsPageComponent } from './components/pages/my-tickets-page/my-tickets-page.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path:'login', component:LoginPageComponent },
   { path:'register', component:RegisterPageComponent },
   { path:'profile/:id', component:ProfilePageComponent, canActivate:[AuthGuard] },
+  { path:'my-tickets/:id', component:MyTicketsPageComponent, canActivate:[AuthGuard] },
   { path:'order/:orderId', component:OrderTrackPageComponent, canActivate:[AuthGuard] },
   { path:'organizer/register', component:OrganizerRegisterPageComponent, canActivate:[AuthGuard] }
 ];
