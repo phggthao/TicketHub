@@ -1,8 +1,9 @@
 import { CartItem } from "./CartItem";
+import { Event } from "./Event";
 
 export class Order{
     id!: number;
-    eventId!: string;
+    event!: Event;
     items: CartItem[] = [];
     totalPrice!: number;
     name!: string;

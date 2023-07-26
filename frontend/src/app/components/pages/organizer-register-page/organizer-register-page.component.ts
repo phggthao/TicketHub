@@ -47,8 +47,7 @@ export class OrganizerRegisterPageComponent implements OnInit{
       this.toastrService.warning('Please fill all the required fields', 'Invalid Inputs');
       return;
     }
-
-    this.organizer.userId = this.userService.currentUser.id;
+    
     this.organizer.name = this.organizerForm.value.name;
     this.organizer.phone = this.organizerForm.value.phone;
     this.organizer.email = this.organizerForm.value.email;

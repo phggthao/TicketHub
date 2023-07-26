@@ -18,6 +18,7 @@ export class CheckoutPageComponent implements OnInit{
   event: Event = new Event();
   order: Order = new Order();
   checkoutForm!: FormGroup;
+  isOrderReady: boolean = false;
 
   constructor(cartService: CartService, 
               private formBuilder: FormBuilder,
@@ -36,7 +37,6 @@ export class CheckoutPageComponent implements OnInit{
                   if(params.id)
                     eventService.getEventById(params.id).subscribe(serverEvent => {
                       this.event = serverEvent;
-                      this.order.eventId = this.event.id;
                     });
                 })
               }
@@ -46,7 +46,7 @@ export class CheckoutPageComponent implements OnInit{
     this.checkoutForm = this.formBuilder.group({
       name: [name, Validators.required],
       phone: [phone, Validators.required],
-      email: [email, Validators.required, Validators.email]
+      email: [email, [Validators.required, Validators.email]]
     });
   }
 
@@ -60,13 +60,14 @@ export class CheckoutPageComponent implements OnInit{
       return;
     }
 
+    this.order.event = this.event;
     this.order.name = this.fc.name.value;
     this.order.phone = this.fc.phone.value;
     this.order.email = this.fc.email.value;
 
     this.orderService.create(this.order).subscribe({
       next:() => {
-        this.router.navigateByUrl('/event/'+ this.order.eventId + '/finish-booking');
+        this.isOrderReady = true;
       },
       error:(errorResponse) => {
         this.toastrService.error(errorResponse, 'Error')

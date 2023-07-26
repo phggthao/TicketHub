@@ -35,7 +35,8 @@
 
     <div class="buttons-container">
         <div class="buttons">
-            <paypal-button [order]="order" (click)="createOrder()"></paypal-button>
+            <button (click)="createOrder()" *ngIf="!isOrderReady">Go To Payment</button>
+            <paypal-button [order]="order" *ngIf="isOrderReady"></paypal-button>
         </div>
     </div>
 </div>

@@ -13,5 +13,4 @@ export class FinishBookingPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

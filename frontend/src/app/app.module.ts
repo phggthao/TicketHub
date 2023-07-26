@@ -85,7 +85,6 @@ export function playerFactory() {
       newestOnTop:false
     }),
     LottieModule.forRoot({player: playerFactory}),
-    // CarouselModule.forRoot()
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true},

@@ -1,8 +1,10 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/services/cart.service';
+import { EventService } from 'src/app/services/event.service';
 import { OrderService } from 'src/app/services/order.service';
+import { Event } from 'src/app/shared/models/Event';
 import { Order } from 'src/app/shared/models/Order';
 
 declare var paypal: any;
@@ -13,6 +15,8 @@ declare var paypal: any;
   styleUrls: ['./paypal-button.component.css']
 })
 export class PaypalButtonComponent implements OnInit{
+  event!: Event;
+
   @Input()
   order!: Order;
 
@@ -22,7 +26,16 @@ export class PaypalButtonComponent implements OnInit{
   constructor(private orderService: OrderService,
     private cartService: CartService,
     private router:Router,
-    private toastrService: ToastrService) { }
+    private toastrService: ToastrService,
+    activatedRoute:ActivatedRoute, 
+    eventService:EventService) {
+      activatedRoute.params.subscribe((params) => {
+        if(params.id)
+          eventService.getEventById(params.id).subscribe(serverEvent => {
+            this.event = serverEvent;
+          });
+      })
+    }
 
   ngOnInit(): void {
     const self = this;
@@ -47,7 +60,7 @@ export class PaypalButtonComponent implements OnInit{
         self.orderService.pay(this.order).subscribe({
           next: (orderId) => {
             this.cartService.clearCart();
-            this.router.navigateByUrl('/track/' + orderId);
+            this.router.navigateByUrl('/event/'+ this.event.id + '/finish-booking');
             this.toastrService.success(
               'Payment Saved Successfully',
               'Success'

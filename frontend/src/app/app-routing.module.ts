@@ -21,7 +21,7 @@ const routes: Routes = [
   { path:'event/:id', component:EventPageComponent },
   { path:'event/:id/select-ticket', component:SelectTicketPageComponent, canActivate:[AuthGuard] },
   { path:'event/:id/checkout', component:CheckoutPageComponent, canActivate:[AuthGuard] },
-  { path:'event/finish-booking', component:FinishBookingPageComponent, canActivate:[AuthGuard] },
+  { path:'event/:id/finish-booking', component:FinishBookingPageComponent, canActivate:[AuthGuard] },
   { path:'login', component:LoginPageComponent },
   { path:'register', component:RegisterPageComponent },
   { path:'profile', component:ProfilePageComponent, canActivate:[AuthGuard] },

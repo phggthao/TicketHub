@@ -13,7 +13,7 @@ router.post("/register", asyncHandler (
         const {name, email, phone, city, district, ward, address} = req.body;
 
         const user = await UserModel.findById(req.user.id);
-        if (user) {
+        if (user?.isOrganizer) {
             res.status(HTTP_BAD_REQUEST).send("You have already registered as an organizer");
             return;
         }
