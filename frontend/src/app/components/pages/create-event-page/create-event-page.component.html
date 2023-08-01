@@ -1,0 +1,83 @@
+<app-title title="Create Event" margin="1.5rem 0 0 2.5rem"></app-title>
+
+<div class="container">        
+    <form [formGroup]="eventForm" (ngSubmit)="submit()">
+        <h2>General Information</h2>  
+        <text-input 
+                [control]="efc.name"
+                [showErrorsWhen]="isSubmitted"
+                label="Event Name">
+        </text-input> 
+
+        <text-input 
+                [control]="efc.location"
+                [showErrorsWhen]="isSubmitted"
+                label="City">
+        </text-input>
+        
+        <text-input 
+                [control]="efc.venue"
+                [showErrorsWhen]="isSubmitted"
+                label="Venue">
+        </text-input>
+
+        <text-input 
+                [control]="efc.date"
+                [showErrorsWhen]="isSubmitted"
+                label="Date & Time">
+        </text-input>
+
+        <text-input 
+                [control]="efc.categories"
+                [showErrorsWhen]="isSubmitted"
+                label="Categories">
+        </text-input>
+
+        <text-input 
+                [control]="efc.description"
+                [showErrorsWhen]="isSubmitted"
+                label="Event Description">
+        </text-input>
+
+        <text-input 
+                [control]="efc.imageUrl"
+                [showErrorsWhen]="isSubmitted"
+                label="Upload a cover image for your event">
+        </text-input>
+      
+        <div formArrayName="tickets">  
+            <h2>Add Ticket(s) Information</h2>         
+            <div *ngFor="let ticket of tickets().controls; let i=index" [formGroup]="newTicket()" [formControlName]="i">  
+                <text-input 
+                    [control]="tfc.class"
+                    [showErrorsWhen]="isSubmitted"
+                    label="Ticket Class">
+                </text-input>
+
+                <text-input 
+                    [control]="tfc.quantity"
+                    [showErrorsWhen]="isSubmitted"
+                    label="Ticket Quantity">
+                </text-input>
+
+                <text-input 
+                    [control]="tfc.price"
+                    [showErrorsWhen]="isSubmitted"
+                    label="Ticket Price">
+                </text-input>
+
+                <text-input 
+                    [control]="tfc.description"
+                    [showErrorsWhen]="isSubmitted"
+                    label="Ticket Description">
+                </text-input>
+
+                <button *ngIf="ticketNum>1" (click)="removeTicket(i)">Remove</button>    
+            </div>  
+            <button type="button" (click)="addTicket()">Add Another Ticket Class</button>
+        </div>  
+       
+        <default-button text="Submit"></default-button>  
+        
+    </form> 
+  </div>

@@ -78,11 +78,4 @@ const generateTokenResponse = (user: User) => {
     };
 }
 
-router.get("/profile/:userId", asyncHandler (
-    async (req, res) => {
-        const user = await UserModel.findById(req.params.userId);
-        res.send(user);
-    }
-))
-
 export default router;

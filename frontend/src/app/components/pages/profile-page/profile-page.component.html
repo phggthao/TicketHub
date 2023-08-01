@@ -9,26 +9,35 @@
 
     <div class="content">
         <app-title title="My Profile" fontSize="1.6rem"></app-title>
-        
+
         <div class="details">
-            <!--<img [src]="user.imageUrl" [alt]="user.name"/>-->
-            <div class="name">
-                <span>Full Name: {{user.name}}</span>
+            <div class="avatar">
+                <!--<img [src]="user.imageUrl" [alt]="user.name"/>-->  
+                <img src="../../../../assets/avatar.png" [alt]="user.name"/>
             </div>
+    
+            <div class="info">          
+                <div class="name">
+                    <span><strong>Name: </strong>{{user.name}}</span>
+                </div>
+    
+                <div class="email">
+                    <span><strong>Email: </strong>{{user.email}}</span>
+                </div>
+    
+                <div class="dob">
+                    <span><strong>Date of Birth: </strong>{{user.dob | date}}</span>
+                </div>
+    
+                <div class="phone">
+                    <span><strong>Phone Number: </strong>{{user.phone}}</span>
+                </div>
 
-            <div class="email">
-                <span>Email: {{user.email}}</span>
+                <div class="buttons">
+                    <default-button class="editProfile" text="Edit Your Profile" [fontSizeRem]="1" onClick=""></default-button>
+                    <default-button class="changePass" text="Change Your Password" [fontSizeRem]="1" onClick=""></default-button>
+                </div>
             </div>
-
-            <div class="dob">
-                <span>Date of Birth: {{user.dob | date}}</span>
-            </div>
-
-            <div class="phone">
-                <span>Phone Number: {{user.phone}}</span>
-            </div>
-            <button>Edit Your Profile</button>
-            <button>Change Your Password</button>
         </div>
     </div>
 </div>

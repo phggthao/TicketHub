@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Organizer } from '../shared/models/Organizer';
-import { ORGANIZER_PROFILE_URL, ORGANIZER_REGISTER_URL } from '../shared/constants/urls';
+import { ORGANIZER_BY_ID_URL, ORGANIZER_REGISTER_URL } from '../shared/constants/urls';
 
 const ORGANIZER_KEY = 'Organizer';
 @Injectable({
@@ -37,10 +37,6 @@ export class OrganizerService {
         }
       })
     )
-  }
-
-  getOrganizerByUserId(userId:string): Observable<Organizer>{
-    return this.http.get<Organizer>(ORGANIZER_PROFILE_URL + userId);
   }
 
   private setOrganizerToLocalStorage(organizer:Organizer){

@@ -13,7 +13,7 @@ export class CartService {
 
   getAllTickets(event: Event):void {
     this.clearCart();
-    for (var ticket of event.ticket) {
+    for (var ticket of event.tickets) {
       this.cart.items.push(new CartItem(ticket));
     }
     this.setCartToLocalStorage();

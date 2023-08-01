@@ -17,7 +17,7 @@ export const UserSchema = new Schema<User>({
     password: {type:String, required:true},
     phone: {type:String, required:true},
     dob: {type:Date, required:true},
-    avatarUrl:{type:String, required:true},
+    avatarUrl:{type:String, required:false},
     isOrganizer: {type:Boolean, required:true},
 }, {
     timestamps: true,

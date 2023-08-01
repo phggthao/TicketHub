@@ -37,6 +37,7 @@ import { OrganizerRegisterPageComponent } from './components/pages/organizer-reg
 import { SideNavComponent } from './components/partials/side-nav/side-nav.component';
 import { MyTicketsPageComponent } from './components/pages/my-tickets-page/my-tickets-page.component';
 import { OrganizerProfilePageComponent } from './components/pages/organizer-profile-page/organizer-profile-page.component';
+import { CreateEventPageComponent } from './components/pages/create-event-page/create-event-page.component';
 
 export function playerFactory() {
   return player;
@@ -70,7 +71,8 @@ export function playerFactory() {
     OrganizerRegisterPageComponent,
     SideNavComponent,
     MyTicketsPageComponent,
-    OrganizerProfilePageComponent
+    OrganizerProfilePageComponent,
+    CreateEventPageComponent
   ],
   imports: [
     BrowserModule,

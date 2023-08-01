@@ -12,3 +12,24 @@ side-nav{
     grid-area: content;
     padding: 2rem;
 }
+
+.details {
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.details > div{
+    margin: 0.5rem;
+    font-size: larger;
+}
+
+strong{
+    display: inline-block;
+    width: 25%;
+}
+
+default-button {
+    margin: 1rem;
+    align-items: center;
+}

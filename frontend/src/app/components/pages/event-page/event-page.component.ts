@@ -11,13 +11,16 @@ import { Event } from 'src/app/shared/models/Event';
 })
 export class EventPageComponent implements OnInit {
   event!: Event;
-  constructor(activatedRoute:ActivatedRoute, eventService:EventService, private cartService: CartService, private router:Router) {
-    activatedRoute.params.subscribe((params) => {
-      if(params.id)
-        eventService.getEventById(params.id).subscribe(serverEvent => {
-          this.event = serverEvent;
-        });
-    })
+
+  constructor(
+    activatedRoute:ActivatedRoute, eventService:EventService, 
+    private cartService: CartService, private router:Router) {
+      activatedRoute.params.subscribe((params) => {
+        if(params.id)
+          eventService.getEventById(params.id).subscribe(serverEvent => {
+            this.event = serverEvent;
+          });
+      })
   }
 
   ngOnInit(): void {
@@ -25,6 +28,8 @@ export class EventPageComponent implements OnInit {
 
   buyTicket(){
     this.cartService.getAllTickets(this.event);
+    console.log(this.event.tickets);
+    
     this.router.navigateByUrl('/event/'+ this.event.id +'/select-ticket');
   }
 }

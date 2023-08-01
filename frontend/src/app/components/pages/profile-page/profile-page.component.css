@@ -12,3 +12,45 @@ side-nav{
     grid-area: content;
     padding: 2rem;
 }
+
+.details {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.info {
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info > div{
+    margin: 0.5rem;
+    font-size: larger;
+}
+
+strong{
+    display: inline-block;
+    width: 25%;
+}
+
+.buttons {
+    display: inline-flex;
+    margin: 1rem;
+}
+
+.buttons .changePass {
+    width: 15rem;
+}
+
+
+

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EventService } from 'src/app/services/event.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/shared/models/User';
 
@@ -9,7 +11,7 @@ import { User } from 'src/app/shared/models/User';
 })
 export class HeaderComponent implements OnInit {
   user!:User;
-  constructor(private userService:UserService) {
+  constructor(private userService:UserService, private router: Router) {
     userService.userObservable.subscribe((newUser) => {
       this.user = newUser;
     })
@@ -22,7 +24,9 @@ export class HeaderComponent implements OnInit {
     this.userService.logOut();
   }
 
-  createEvent() {
+  createEventRouter() {
+    if (!this.isOrganizer) this.router.navigateByUrl('/organizer/register');
+    else this.router.navigateByUrl('/create-event');
   }
 
   get isAuth() {

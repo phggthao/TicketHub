@@ -105,7 +105,7 @@ export const sample_events: Event[] = [
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/lyly.jpg',
         favorite: false,
-        ticket: sample_tickets_1,
+        tickets: sample_tickets_1,
     },
     {
         id: '2',
@@ -117,7 +117,7 @@ export const sample_events: Event[] = [
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/organizer.jpg',
         favorite: true,
-        ticket: sample_tickets_2,
+        tickets: sample_tickets_2,
     },
     {
         id: '3',
@@ -129,7 +129,7 @@ export const sample_events: Event[] = [
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/lyly.jpg',
         favorite: true,
-        ticket: sample_tickets_3,
+        tickets: sample_tickets_3,
     },
     {
         id: '4',
@@ -141,7 +141,7 @@ export const sample_events: Event[] = [
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/organizer.jpg',
         favorite: false,
-        ticket: sample_tickets_4,
+        tickets: sample_tickets_4,
     },
     {
         id: '5',
@@ -153,7 +153,7 @@ export const sample_events: Event[] = [
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         imageUrl: 'assets/cover/stage.jpg',
         favorite: true,
-        ticket: sample_tickets_5,
+        tickets: sample_tickets_5,
     },
 ]
 

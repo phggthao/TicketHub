@@ -7,14 +7,16 @@
       [autoplay]="{ delay: 2000, pauseOnMouseEnter: true }"
       [loop]="true">
     <ng-template swiperSlide *ngFor="let event of events">
-      <img [src]="event.imageUrl" routerLink="/event/{{event.id}}">
+      <a routerLink="/event/{{event.id}}">
+        <img [src]="event.imageUrl">
 
-      <div class="back-ground"></div>
-    
-      <div class="carousel-caption">
-        <h1>{{event.name}}</h1>
-        <p>{{event.date | date}}</p>
-      </div>
+        <div class="back-ground"></div>
+      
+        <div class="carousel-caption">
+          <h1>{{event.name}}</h1>
+          <p>{{event.date | date}}</p>
+        </div>
+      </a>
     </ng-template>
   </swiper>
 </div>

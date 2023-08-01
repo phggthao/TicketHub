@@ -26,12 +26,6 @@ router.post('/create', asyncHandler(async (req:any, res:any) => {
     res.send(newOrder);
 }))
 
-router.get('/newOrderForCurrentUser', asyncHandler( async (req:any,res ) => {
-    const order= await getNewOrderForCurrentUser(req);
-    if(order) res.send(order);
-    else res.status(HTTP_BAD_REQUEST).send();
-}))
-
 router.post('/pay', asyncHandler( async (req:any, res) => {
     const {paymentId} = req.body;
     const order = await getNewOrderForCurrentUser(req);

@@ -1,6 +1,8 @@
+import { User } from "./User";
+
 export class Organizer {
     id!:string;
-    userId!:string;
+    user!:User;
     name!:string;
     email!:string;
     phone!:string;
@@ -8,5 +10,4 @@ export class Organizer {
     district!:string;
     ward!:string;
     address!:string;
-    token!:string;
 }

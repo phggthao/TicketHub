@@ -1,30 +1,33 @@
-import { Schema, model } from "mongoose";
+import { Schema, Types, model } from "mongoose";
 import { Ticket, TicketSchema } from "./ticket.model";
+import { Organizer, OrganizerSchema } from "./organizer.model";
 
 export interface Event{
     id: string;
     name: string;
-    organizer: string;
+    organizer: Organizer;
     location: string;
+    venue: string;
     date: string;
     categories: string[];
     description: string;
     imageUrl: string;
     favorite: boolean;
-    ticket: Ticket[];
+    tickets: Ticket[];
 }
 
 export const EventSchema = new Schema<Event>(
     {
         name: {type:String, required:true},
-        organizer: {type:String, required:true},
+        organizer: {type: OrganizerSchema, required:true},
         location: {type:String, required:true},
+        venue: {type:String, required:true},
         date: {type:String, required:true},
         categories: {type:[String]},
         description: {type:String, required:true},
         imageUrl: {type:String, required:true},
         favorite: {type:Boolean, default:false},
-        ticket: {type:[TicketSchema], required:true},
+        tickets: {type:[TicketSchema], required:true},
     },{
         toJSON:{
             virtuals: true

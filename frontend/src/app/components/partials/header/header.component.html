@@ -6,11 +6,7 @@
         <app-search></app-search>
         <ul>
             <li>
-                <button *ngIf="!isOrganizer" routerLink="/organizer/register">Create Event</button>
-            </li>
-
-            <li>
-                <button *ngIf="isOrganizer" (click)="createEvent()">Create Event</button>
+                <button (click)="createEventRouter()">Create Event</button>
             </li>
 
             <li *ngIf="!isAuth">
@@ -18,7 +14,9 @@
             </li>
 
             <li *ngIf="isAuth" class="menu-container">
-                <a class="user"><span><img src="{{user.avatarUrl}}"></span>{{user.name}}</a>
+                <!-- <a class="user"><span><img src="{{user.avatarUrl}}"></span>{{user.name}}</a> -->
+
+                <a class="user"><span><img src="../../../../assets/avatar.png"></span>{{user.name}}</a>
                 
                 <div class="menu">
                     <a routerLink="/profile">

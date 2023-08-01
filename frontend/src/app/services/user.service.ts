@@ -3,10 +3,9 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/User';
 import { HttpClient } from '@angular/common/http';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
-import { USER_LOGIN_URL, USER_PROFILE_URL, USER_REGISTER_URL } from '../shared/constants/urls';
+import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
-import { Organizer } from '../shared/models/Organizer';
 
 const USER_KEY = 'User';
 @Injectable({
@@ -58,10 +57,6 @@ export class UserService {
         }
       })
     )
-  }
-
-  getUserById(userId:string): Observable<User>{
-    return this.http.get<User>(USER_PROFILE_URL + userId);
   }
 
   logOut() {
