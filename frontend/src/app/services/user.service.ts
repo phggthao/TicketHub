@@ -6,6 +6,8 @@ import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const USER_KEY = 'User';
 @Injectable({
@@ -15,7 +17,7 @@ export class UserService {
   private userSubject = new BehaviorSubject<User>(this.getUserFromLocalStorage());
   public userObservable:Observable<User>;
 
-  constructor(private http:HttpClient, private toastrService:ToastrService) {
+  constructor(private http:HttpClient, private toastrService:ToastrService, private afs: AngularFireAuth) {
     this.userObservable = this.userSubject.asObservable();
   }
 
@@ -39,6 +41,10 @@ export class UserService {
         }
       })
     );
+  }
+
+  loginWithGoogle() {
+    return this.afs.signInWithPopup(new GoogleAuthProvider());
   }
 
   register(userRegister:IUserRegister): Observable<User>{

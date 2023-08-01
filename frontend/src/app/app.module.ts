@@ -38,6 +38,9 @@ import { SideNavComponent } from './components/partials/side-nav/side-nav.compon
 import { MyTicketsPageComponent } from './components/pages/my-tickets-page/my-tickets-page.component';
 import { OrganizerProfilePageComponent } from './components/pages/organizer-profile-page/organizer-profile-page.component';
 import { CreateEventPageComponent } from './components/pages/create-event-page/create-event-page.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment.prod';
 
 export function playerFactory() {
   return player;
@@ -87,6 +90,8 @@ export function playerFactory() {
       newestOnTop:false
     }),
     LottieModule.forRoot({player: playerFactory}),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true},

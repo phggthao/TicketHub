@@ -2,7 +2,7 @@
     <div class="details">
         <app-title title="Login"></app-title>
 
-        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
             <text-input [control]="fc.email" 
                 [showErrorsWhen]="isSubmitted" 
                 type="email" 
@@ -15,7 +15,14 @@
                 label="Password">
             </text-input>
             
-            <default-button text="Login"></default-button>
+            <default-button text="Login" onClick="login()"></default-button>
+
+            <p>or</p>
+
+            <button class="googleLogin" (click)="loginWithGoogle()">
+                <span><i class="fa-brands fa-google"></i></span>
+                <span>Login With Google</span>
+            </button>
 
             <div class="register">
                 New user? &nbsp;

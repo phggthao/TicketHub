@@ -31,7 +31,7 @@ export class LoginPageComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  submit() {
+  login() {
     this.isSubmitted = true;
     if(this.loginForm.invalid) return;
 
@@ -40,4 +40,12 @@ export class LoginPageComponent implements OnInit {
     });
   }
 
+  loginWithGoogle() {
+    this.isSubmitted = false;
+    this.userService.loginWithGoogle().then((res:any) => {
+      this.router.navigateByUrl(this.returnUrl);
+    }).catch((error: any) => {
+      console.error(error);
+    });
+  }
 }

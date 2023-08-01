@@ -16,7 +16,7 @@ export class DefaultButtonComponent implements OnInit {
   @Input()
   color = 'white';
   @Input()
-  fontSizeRem = 1.3;
+  fontSizeRem = 1;
   @Input()
   widthRem = 12;
   @Output()
