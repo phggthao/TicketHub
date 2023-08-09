@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
+    production: true,
     firebaseConfig: {
         apiKey: "AIzaSyC4VjAZOehy_mu4eGefx7LVyauRG0kKWE0",
         authDomain: "tickethub-e7af0.firebaseapp.com",

@@ -100,3 +100,9 @@ li span .plus:hover,
     opacity: 0.9;
     cursor: pointer;
 }
+
+.event-details{
+    display: flex;
+    margin: 1rem 4rem;
+    flex-direction: column;
+}

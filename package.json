@@ -1,0 +1,21 @@
+{
+  "name": "tickethub",
+  "version": "1.0.0",
+  "description": "This project was generated with Node.js, Express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "cd backend && npm run build",
+    "build": "cd frontend && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phggthao/TicketHub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phggthao/TicketHub/issues"
+  },
+  "homepage": "https://github.com/phggthao/TicketHub#readme"
+}

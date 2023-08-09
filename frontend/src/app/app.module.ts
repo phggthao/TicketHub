@@ -40,7 +40,7 @@ import { OrganizerProfilePageComponent } from './components/pages/organizer-prof
 import { CreateEventPageComponent } from './components/pages/create-event-page/create-event-page.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 export function playerFactory() {
   return player;
