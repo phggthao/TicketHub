@@ -14,7 +14,7 @@ import { User } from 'src/app/shared/models/User';
 export class MyTicketsPageComponent implements OnInit{
   user!: User;
   orders: Order[] = [];
-  constructor(userService:UserService, activatedRoute: ActivatedRoute, orderService: OrderService) {
+  constructor(userService:UserService, orderService: OrderService) {
     let ordersObservable: Observable<Order[]>;
 
     userService.userObservable.subscribe((currentUser) => {

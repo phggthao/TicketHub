@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrganizerService } from 'src/app/services/organizer.service';
+import { UserService } from 'src/app/services/user.service';
 import { Organizer } from 'src/app/shared/models/Organizer';
 
 @Component({
@@ -10,8 +11,10 @@ import { Organizer } from 'src/app/shared/models/Organizer';
 export class OrganizerProfilePageComponent implements OnInit{
   organizer!: Organizer;
 
-  constructor(private organizerService: OrganizerService) {
-    this.organizer = organizerService.currentOrganizer;
+  constructor(private organizerService: OrganizerService, private userService: UserService,) {
+    organizerService.getOrganizerByUser(this.userService.currentUser.id).subscribe(serverOrganizer => {
+      this.organizer = serverOrganizer;
+    });
   }
 
   ngOnInit(): void {

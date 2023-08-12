@@ -1,7 +1,7 @@
 <app-title title="Create Event" margin="1.5rem 0 0 2.5rem"></app-title>
 
 <div class="container">        
-    <form [formGroup]="eventForm" (ngSubmit)="submit()">
+    <form [formGroup]="eventForm" (ngSubmit)="createEvent()">
         <h2>General Information</h2>  
         <text-input 
                 [control]="efc.name"
@@ -46,31 +46,43 @@
         </text-input>
       
         <div formArrayName="tickets">  
-            <h2>Add Ticket(s) Information</h2>         
-            <div *ngFor="let ticket of tickets().controls; let i=index" [formGroup]="newTicket()" [formControlName]="i">  
+            <h2>Ticket Information</h2>         
+            <div *ngFor="let ticket of tickets().controls; let i=index" [formGroupName]="i">  
                 <text-input 
-                    [control]="tfc.class"
+                    [control]="tfc(i).class"
                     [showErrorsWhen]="isSubmitted"
                     label="Ticket Class">
                 </text-input>
 
                 <text-input 
-                    [control]="tfc.quantity"
+                    [control]="tfc(i).quantity"
                     [showErrorsWhen]="isSubmitted"
                     label="Ticket Quantity">
                 </text-input>
 
                 <text-input 
-                    [control]="tfc.price"
+                    [control]="tfc(i).price"
                     [showErrorsWhen]="isSubmitted"
                     label="Ticket Price">
                 </text-input>
 
                 <text-input 
-                    [control]="tfc.description"
+                    [control]="tfc(i).description"
                     [showErrorsWhen]="isSubmitted"
                     label="Ticket Description">
                 </text-input>
+
+                <!-- <p>Ticket Class</p>
+                <input type="text" formControlName="class" class="form-control">
+
+                <p>Ticket Quantity</p>
+                <input type="text" formControlName="quantity" class="form-control">
+
+                <p>Ticket Price</p>
+                <input type="text" formControlName="price" class="form-control">
+
+                <p>Ticket Description</p>
+                <input type="text" formControlName="description" class="form-control"> -->
 
                 <button *ngIf="ticketNum>1" (click)="removeTicket(i)">Remove</button>    
             </div>  

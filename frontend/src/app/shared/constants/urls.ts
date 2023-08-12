@@ -5,6 +5,7 @@ export const EVENT_CATEGORIES_URL = EVENTS_URL + '/categories';
 export const EVENTS_BY_SEARCH_URL = EVENTS_URL + '/search/';
 export const EVENTS_BY_CATEGORY_URL = EVENTS_URL + '/category/';
 export const EVENT_BY_ID_URL = EVENTS_URL + '/';
+export const EVENT_CREATE_URL = EVENTS_URL + '/create';
 
 export const USERS_URL = BASE_URL + '/api/users';
 export const USER_LOGIN_URL = USERS_URL + '/login';
@@ -19,3 +20,4 @@ export const ORDER_BY_ID_URL = ORDERS_URL + '/track/';
 export const ORGANIZERS_URL = BASE_URL + '/api/organizers';
 export const ORGANIZER_REGISTER_URL = ORGANIZERS_URL + '/register';
 export const ORGANIZER_BY_ID_URL = ORGANIZERS_URL + '/';
+export const ORGANIZER_BY_USER_URL = ORGANIZERS_URL + '/user/';

@@ -4,7 +4,6 @@ import { UserModel } from "../models/user.model";
 import { HTTP_BAD_REQUEST } from "../constants/http_status";
 import { OrganizerModel, Organizer } from "../models/organizer.model";
 import auth from '../middlewares/auth.mid';
-import { EventModel } from "../models/event.model";
 
 const router = Router();
 router.use(auth);
@@ -50,23 +49,10 @@ router.post("/register", asyncHandler (
     }
 ))
 
-router.get("/:id", asyncHandler (
-    async (req, res) => {
-        const organizer = await OrganizerModel.findById(req.params.id);
-        if (!organizer) {
-            res.status(HTTP_BAD_REQUEST).send('Organizer Not Found!');
-            return; 
-        } 
+router.get("/user/:userId", asyncHandler (
+    async (req: any, res) => {
+        const organizer = await OrganizerModel.findOne({user: req.user.id});
         res.send(organizer);
-    }
-))
-
-router.post("/create-event", asyncHandler (
-    async (req:any, res:any) => {
-        const requestEvent = req.body;
-        const newEvent = new EventModel({...requestEvent, organizer: req.organizer.id});
-        await newEvent.save();
-        res.send(newEvent);
     }
 ))
 

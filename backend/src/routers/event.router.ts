@@ -1,9 +1,14 @@
 import { Router } from "express";
 import { sample_events } from "../data";
 import asyncHandler from "express-async-handler";
-import { EventModel } from "../models/event.model";
+import { Event, EventModel } from "../models/event.model";
+import auth from '../middlewares/auth.mid';
+import { OrganizerModel } from "../models/organizer.model";
+import { HTTP_BAD_REQUEST } from "../constants/http_status";
+import { UserModel } from "../models/user.model";
 
 const router = Router();
+router.use(auth);
 
 router.get("/seed", asyncHandler(
     async (req, res) => {
@@ -69,6 +74,29 @@ router.get("/:eventId", asyncHandler (
     async (req, res) => {
         const event = await EventModel.findById(req.params.eventId);
         res.send(event);
+    }
+))
+
+router.post("/create", asyncHandler (
+    async (req: any, res: any) => {
+        const {name, organizer, location, venue, date, categories, description, imageUrl, tickets} = req.body;
+
+        const newEvent: Event = {
+            id:'',
+            name, 
+            organizer,
+            location, 
+            venue, 
+            date, 
+            categories, 
+            description, 
+            imageUrl, 
+            tickets,
+            favorite: false
+        }
+
+        const dbEvent = await EventModel.create(newEvent);
+        res.send(dbEvent);
     }
 ))
 

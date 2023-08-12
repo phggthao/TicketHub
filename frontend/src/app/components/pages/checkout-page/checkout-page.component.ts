@@ -6,7 +6,6 @@ import { CartService } from 'src/app/services/cart.service';
 import { EventService } from 'src/app/services/event.service';
 import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
-import { Event } from 'src/app/shared/models/Event';
 import { Order } from 'src/app/shared/models/Order';
 
 @Component({
@@ -15,7 +14,6 @@ import { Order } from 'src/app/shared/models/Order';
   styleUrls: ['./checkout-page.component.css']
 })
 export class CheckoutPageComponent implements OnInit{
-  event: Event = new Event();
   order: Order = new Order();
   checkoutForm!: FormGroup;
   isOrderReady: boolean = false;
@@ -36,7 +34,7 @@ export class CheckoutPageComponent implements OnInit{
                 activatedRoute.params.subscribe((params) => {
                   if(params.id)
                     eventService.getEventById(params.id).subscribe(serverEvent => {
-                      this.event = serverEvent;
+                      this.order.event = serverEvent;
                     });
                 })
               }
@@ -60,7 +58,6 @@ export class CheckoutPageComponent implements OnInit{
       return;
     }
 
-    this.order.event = this.event;
     this.order.name = this.fc.name.value;
     this.order.phone = this.fc.phone.value;
     this.order.email = this.fc.email.value;

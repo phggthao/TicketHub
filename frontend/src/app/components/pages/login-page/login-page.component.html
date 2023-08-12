@@ -16,20 +16,20 @@
             </text-input>
             
             <default-button text="Login" onClick="login()"></default-button>
-
-            <p>or</p>
-
-            <button class="googleLogin" (click)="loginWithGoogle()">
-                <span><i class="fa-brands fa-google"></i></span>
-                <span>Login With Google</span>
-            </button>
-
-            <div class="register">
-                New user? &nbsp;
-                <a routerLink="/register" [queryParams]="{returnUrl: returnUrl}">
-                    Register here
-                </a>
-            </div>
         </form>
+
+        <p>or</p>
+
+        <button class="googleLogin" (click)="loginWithGoogle()">
+            <span><i class="fa-brands fa-google"></i></span>
+            <span>Login With Google</span>
+        </button>
+
+        <div class="register">
+            New user? &nbsp;
+            <a routerLink="/register" [queryParams]="{returnUrl: returnUrl}">
+                Register here
+            </a>
+        </div>
     </div>
 </div>
