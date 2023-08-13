@@ -72,22 +72,65 @@
                     label="Ticket Description">
                 </text-input>
 
-                <!-- <p>Ticket Class</p>
-                <input type="text" formControlName="class" class="form-control">
-
-                <p>Ticket Quantity</p>
-                <input type="text" formControlName="quantity" class="form-control">
-
-                <p>Ticket Price</p>
-                <input type="text" formControlName="price" class="form-control">
-
-                <p>Ticket Description</p>
-                <input type="text" formControlName="description" class="form-control"> -->
-
                 <button *ngIf="ticketNum>1" (click)="removeTicket(i)">Remove</button>    
             </div>  
             <button type="button" (click)="addTicket()">Add Another Ticket Class</button>
         </div>  
+
+        <button type="button" (click)="preview()">Preview Your Event</button>
+
+        
+        <div *ngIf="isSubmitted" class="preview">
+            <h2>Preview Your Event</h2>
+            <img [src]="event.imageUrl" [alt]="event.name"/>
+            
+            <div class="details">
+                <div class="header">
+                    <span class="name">{{event.name}}</span>
+                    <!-- <span class="favorite {{event.favorite? '': 'not'}}">♥</span> -->
+                </div>
+        
+                <div class="categories">{{event.categories}}</div>
+        
+                <div class="organizer">
+                    <span>Organizer: <strong>{{event.organizer.name}}</strong></span>
+                </div>
+        
+                <div class="venue">
+                  <span>Venue: <strong>{{event.venue}}</strong></span>
+                </div>
+        
+                <div class="date">
+                    <span>Date: <strong>{{event.date | date:'fullDate'}}</strong></span>
+                </div>
+        
+                <div class="description">
+                  <span><strong>Description: </strong>{{event.description}}</span>
+                </div>
+        
+                <div class="ticket">
+                  <strong>Tickets Information: </strong>
+        
+                  <ul>
+                    <li *ngFor="let ticket of event.tickets">
+                        <div>
+                            <a>{{ticket.class}}</a>
+                        </div>
+            
+                        <div>
+                            <span>Price: </span>{{ticket.price | currency}}
+                        </div>
+            
+                        <div>
+                            {{ticket.description}}
+                        </div>
+                    </li>
+                  </ul>
+                </div>
+                
+                <button type="button" disabled>Buy Ticket</button>
+            </div>
+        </div>
        
         <default-button text="Submit"></default-button>  
         

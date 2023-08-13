@@ -81,6 +81,10 @@ router.post("/create", asyncHandler (
     async (req: any, res: any) => {
         const {name, organizer, location, venue, date, categories, description, imageUrl, tickets} = req.body;
 
+        await EventModel.deleteOne({
+            organizer: organizer
+        });
+
         const newEvent: Event = {
             id:'',
             name, 
@@ -97,6 +101,13 @@ router.post("/create", asyncHandler (
 
         const dbEvent = await EventModel.create(newEvent);
         res.send(dbEvent);
+    }
+))
+
+router.get("/my-events", asyncHandler (
+    async (req: any, res) => {
+        const events = await EventModel.find({organizer: req.organizer})
+        res.send(events);
     }
 ))
 

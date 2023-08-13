@@ -58,6 +58,8 @@ export class OrganizerRegisterPageComponent implements OnInit{
 
     this.organizerService.register(this.organizer).subscribe(_ => {
       this.router.navigateByUrl(this.returnUrl);
+      this.toastrService.success('Please login again', 'Login again');
+      this.userService.logOut();
     })
   }
 }

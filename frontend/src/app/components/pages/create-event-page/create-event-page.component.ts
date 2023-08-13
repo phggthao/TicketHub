@@ -24,7 +24,7 @@ export class CreateEventPageComponent{
     private organizerService: OrganizerService,
     private eventService: EventService,
     private userService: UserService,
-    private router: Router,) {
+    private router: Router) {
       organizerService.getOrganizerByUser(this.userService.currentUser.id).subscribe(serverOrganizer => {
         this.event.organizer = serverOrganizer;
       });
@@ -73,6 +73,25 @@ export class CreateEventPageComponent{
   tfc(i:number) {
     const ticket = this.tickets().at(i) as FormGroup;
     return ticket.controls;
+  }
+
+  preview(){
+    if (this.eventForm.invalid){
+      this.toastrService.warning('Please fill all the required fields', 'Invalid Inputs');
+      return;
+    }
+    else {
+      const fv = this.eventForm.value;
+      this.event.name = fv.name;
+      this.event.location = fv.location;
+      this.event.venue = fv.venue;
+      this.event.date = fv.date;
+      this.event.categories = fv.categories;
+      this.event.description = fv.description;
+      this.event.imageUrl = fv.imageUrl;  
+      this.event.tickets = fv.tickets;
+      this.isSubmitted = true;
+    } 
   }
 
   createEvent() {

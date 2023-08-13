@@ -1,0 +1,31 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 'menu content';
+}
+
+side-nav{
+    grid-area: menu;
+}
+
+.content {
+    grid-area: content;
+    padding: 2rem;
+}
+
+table{
+    width: 100%;
+    border: 1px solid #eeeeee;
+    margin-top: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+th{
+    text-align: left;
+    color: grey;
+}
+
+td{
+    height: 3rem;
+}

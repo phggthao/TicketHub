@@ -14,6 +14,7 @@ import { OrganizerRegisterPageComponent } from './components/pages/organizer-reg
 import { MyTicketsPageComponent } from './components/pages/my-tickets-page/my-tickets-page.component';
 import { OrganizerProfilePageComponent } from './components/pages/organizer-profile-page/organizer-profile-page.component';
 import { CreateEventPageComponent } from './components/pages/create-event-page/create-event-page.component';
+import { MyEventsComponent } from './components/pages/my-events/my-events.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path:'order/:orderId', component:OrderTrackPageComponent, canActivate:[AuthGuard] },
   { path:'organizer/register', component:OrganizerRegisterPageComponent, canActivate:[AuthGuard] },
   { path:'organizer/profile', component:OrganizerProfilePageComponent, canActivate:[AuthGuard] },
+  { path:'organizer/my-events', component:MyEventsComponent, canActivate:[AuthGuard] }
 ];
 
 @NgModule({

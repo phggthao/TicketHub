@@ -41,6 +41,8 @@ import { CreateEventPageComponent } from './components/pages/create-event-page/c
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
+import { MyEventsComponent } from './components/pages/my-events/my-events.component';
+import { PreviewEventComponent } from './components/pages/preview-event/preview-event.component';
 
 export function playerFactory() {
   return player;
@@ -75,7 +77,9 @@ export function playerFactory() {
     SideNavComponent,
     MyTicketsPageComponent,
     OrganizerProfilePageComponent,
-    CreateEventPageComponent
+    CreateEventPageComponent,
+    MyEventsComponent,
+    PreviewEventComponent
   ],
   imports: [
     BrowserModule,

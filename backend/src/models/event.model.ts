@@ -1,10 +1,11 @@
 import { Schema, Types, model } from "mongoose";
 import { Ticket, TicketSchema } from "./ticket.model";
+import { Organizer, OrganizerSchema } from "./organizer.model";
 
 export interface Event{
     id: string;
     name: string;
-    organizer: Types.ObjectId;
+    organizer: Organizer;
     location: string;
     venue: string;
     date: string;
@@ -18,7 +19,7 @@ export interface Event{
 export const EventSchema = new Schema<Event>(
     {
         name: {type:String, required:true},
-        organizer: {type: Schema.Types.ObjectId},
+        organizer: {type: OrganizerSchema, required:true, unique:false},
         location: {type:String, required:true},
         venue: {type:String, required:true},
         date: {type:String, required:true},

@@ -1,0 +1,38 @@
+<app-not-found 
+    [visible]="!organizer"
+    notFoundMessage="Page Not Found"
+    resetLinkText="Back To Homepage">
+</app-not-found>
+<div *ngIf="organizer" class="container">
+    <side-nav menu1="Organizer Profile" router1="/organizer/profile" 
+            menu2="My Events" router2="/organizer/my-events"></side-nav>
+
+    <div class="content">
+        <app-title title="My Events" fontSize="1.6rem"></app-title>
+        
+        <app-not-found 
+            [visible]="events.length<=0"
+            notFoundMessage="You haven't created any events on TicketHub!"
+            resetLinkText="Back To Homepage">
+        </app-not-found>
+
+        <div *ngIf="events.length>0" class="details">
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Event Name</th>
+                    <th>Event Date</th>
+                    <th>Total Tickets Quantity</th>
+                    <th>Maximum Revenue ($)</th>
+                </tr>
+                <tr *ngFor="let event of events; let i=index" routerLink="/event/{{event.id}}"> 
+                    <td>{{i+1}}</td>
+                    <td>{{event.name}}</td>
+                    <td>{{event.date | date}}</td>
+                    <td>{{totalTicketQuantity(event)}}</td>
+                    <td>{{maxRevenue(event)}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

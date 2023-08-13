@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ORDERS_BY_USER_URL, ORDER_BY_ID_URL, ORDER_CREATE_URL, ORDER_PAY_URL } from '../shared/constants/urls';
 import { Order } from '../shared/models/Order';
 import { Observable } from 'rxjs';
+import { Event } from '../shared/models/Event';
 
 @Injectable({
   providedIn: 'root'

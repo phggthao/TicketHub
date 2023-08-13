@@ -14,7 +14,7 @@ export interface Organizer {
 
 export const OrganizerSchema = new Schema<Organizer>({
     name: {type:String, required:true},
-    email: {type:String, required:true, unique:true},
+    email: {type:String, required:true},
     phone: {type:String, required:true},
     city: {type:String, required:true},
     district: {type:String, required:true},
